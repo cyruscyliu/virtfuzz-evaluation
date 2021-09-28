@@ -49,4 +49,4 @@ RUN apt-get install -y libvncserver-dev
 RUN apt-get install -y screen
 RUN apt-get install -y parallel
 RUN pip3 install picire
-RUN apt-get install -y top cpulimit
+RUN apt-get install -y htop cpulimit
