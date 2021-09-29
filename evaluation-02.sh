@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-export UBSAN_OPTIONS=symbolize=1:halt_on_error=1:print_stacktrace=1
+export UBSAN_OPTIONS=symbolize=1:halt_on_error=0:print_stacktrace=1
 QEMU_BIN=$PWD/../qemu/build-coverage-5/qemu-fuzz-i386
 ROUND=0
 DISABLE_STRUCTURAL_BUFFER=1 LLVM_PROFILE_FILE=profile-virtfuzz-m-ehci-$ROUND cpulimit -l 100 -- $QEMU_BIN --fuzz-target=stateful-fuzz-ehci -max_total_time=86400 >virtfuzz-m-ehci-$ROUND.log 2>&1 &
