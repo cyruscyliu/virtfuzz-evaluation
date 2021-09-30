@@ -25,7 +25,19 @@ pushd evaluation && ./coverage.sh 5 && popd
 ```
 
 ## Evaluation 1: virtfuzz EHCI/OHCI/UHCI, 3 * 10, Machine A
->pushd evaluation && bash -x ./evaluation-01.sh && popd
+```
+pushd evaluation
+bash -x ./evaluation-01.sh ehci
+bash -x ./evaluation-01.sh ohci
+bash -x ./evaluation-01.sh uhci
+popd
+```
 
 ## Evaluation 2: virtfuzz-m EHCI/OHCI/UHCI, 3 * 10, Machine B
->pushd evaluation && bash -x ./evaluation-02.sh && popd
+```
+pushd evaluation
+bash -x ./evaluation-02.sh ehci
+bash -x ./evaluation-02.sh ohci
+bash -x ./evaluation-02.sh uhci
+popd
+```
