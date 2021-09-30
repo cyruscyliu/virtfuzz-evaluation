@@ -8,7 +8,7 @@ if [ $VERSION == '6' ]; then
     ninja qemu-fuzz-i386 qemu-fuzz-arm qemu-fuzz-aarch64
     cd $OLDPWD
 elif [ $VERSION == '5' ]; then
-    CC=clang CXX=clang++ ../configure --enable-debug --enable-debug-info \
+    CC=clang CXX=clang++ ../configure --enable-debug \
         --disable-werror --disable-sanitizers \
         --target-list="i386-softmmu arm-softmmu aarch64-softmmu"
     make CONFIG_FUZZ=y CFLAGS="-fsanitize=fuzzer" -j$(nproc) \
