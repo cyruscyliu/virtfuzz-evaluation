@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
+plt.rcParams.update({'font.size': 24})
 
 def plot(metadata, linestyle, shadowcolor):
     filename = metadata['filename']
@@ -27,16 +28,15 @@ for filename in sys.argv[1:]:
 
 fig, ax = plt.subplots()
 ax.set_xscale('log')
-ax.set_xlabel('Time (log)')
 ax.set_ylabel('Branch Coverage')
-plt.xticks([10, 60, 600, 3600, 36000, 86400], ['10s', '1m', '10m', '1h', '10h', '24h'])
+plt.xticks([10, 60, 600, 3600, 86400], ['10s', '1m', '10m', '1h', '24h'])
 ax.set_ylim(0, 1)
 ax.yaxis.set_major_formatter(mtick.PercentFormatter(1))
-ax.set_aspect(4.5, adjustable='box')
+ax.set_aspect(4.9, adjustable='box')
 
 linestyle = ['-', '--', '-.', ':']
 shadowcolor = ['0.6', '0.7', '0.8', '0.9']
 for i, md in enumerate(metadata):
     plot(md, linestyle[i], shadowcolor[i])
 
-plt.savefig('{}.pdf'.format('@'.join(sys.argv[1:])))
+plt.savefig('{}.pdf'.format('@'.join(sys.argv[1:])), bbox_inches='tight')
