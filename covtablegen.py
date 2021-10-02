@@ -15,9 +15,14 @@ for line in sys.stdin:
     table[timestamp][run] = cov
     columns.add(run)
 
-# check columns
-for _, covs in table.items():
-    assert(len(covs) == len(columns))
+# fill in gaps
+last_cov = {}
+for timestamp, covs in table.items():
+    for column in columns:
+        if column in covs:
+            last_cov[column] = covs[column]
+        else:
+            table[timestamp][column] = last_cov[column]
 
 # generate table
 header = ['timestamp']
@@ -32,7 +37,7 @@ for timestamp, covs in table.items():
     output += data
     output.append('{}%'.format(max(dataf)))
     output.append('{}%'.format(min(dataf)))
-    output.append('{}%'.format(sum(dataf) / len(columns)))
+    output.append('{}%'.format(round(sum(dataf) / len(columns), 2)))
     outputs.append(output)
 
 # output table
