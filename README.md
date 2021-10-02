@@ -42,6 +42,15 @@ bash -x ./evaluation-02.sh uhci
 popd
 ```
 
+## Evaluation 3: qtest EHCI/OHCI/UHCI, 3 * 10, Machine B
+```
+pushd evaluation
+bash -x ./evaluation-03.sh ehci
+bash -x ./evaluation-03.sh ohci
+bash -x ./evaluation-03.sh uhci
+popd
+```
+
 ## Figures and Tables
 
 ### Generate cov table for each target
