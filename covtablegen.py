@@ -32,12 +32,12 @@ outputs = [header]
 for timestamp, covs in table.items():
     output = []
     output.append(timestamp)
-    data = [covs[i] for i in columns]
-    dataf = [float(i.strip('%')) for i in data]
+    data = [str(round(float(covs[i].strip('%')) / 100, 4)) for i in columns]
+    dataf = [float(i) for i in data]
     output += data
-    output.append('{}%'.format(max(dataf)))
-    output.append('{}%'.format(min(dataf)))
-    output.append('{}%'.format(round(sum(dataf) / len(columns), 2)))
+    output.append('{}'.format(max(dataf)))
+    output.append('{}'.format(min(dataf)))
+    output.append('{}'.format(round(sum(dataf) / len(columns), 4)))
     outputs.append(output)
 
 # output table

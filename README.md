@@ -46,5 +46,5 @@ popd
 
 ### Generate cov table for each target
 ```
-bash -x ./covgentable.sh ehci.c reports/cov-virtfuzz-ehci-*
+bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-ehci- > virtfuzz-ehci.csv
 ```
