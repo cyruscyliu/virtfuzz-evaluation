@@ -41,3 +41,10 @@ bash -x ./evaluation-02.sh ohci
 bash -x ./evaluation-02.sh uhci
 popd
 ```
+
+## Figures and Tables
+
+### Generate cov table for each target
+```
+bash -x ./covgentable.sh ehci.c reports/cov-virtfuzz-ehci-*
+```
