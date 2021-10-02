@@ -47,4 +47,10 @@ popd
 ### Generate cov table for each target
 ```
 bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-ehci- > virtfuzz-ehci.csv
+bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-m-ehci- 1 > virtfuzz-m-ehci.csv
+```
+
+### Plot branch cov over time
+```
+python3 cov24plot.py virtfuzz-ehci.csv
 ```

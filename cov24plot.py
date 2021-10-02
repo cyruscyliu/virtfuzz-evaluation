@@ -11,8 +11,9 @@ def plot(metadata, linestyle, shadowcolor):
     filename = metadata['filename']
     data = pd.read_csv(filename)
     data['timestamp'] -= data['timestamp'][0]
-    plt.plot(data['timestamp'], data['avg'], linestyle, linewidth=2, color='black')
+    plt.plot(data['timestamp'], data['avg'], linestyle, linewidth=2, color='black', label=metadata['tool'])
     plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor)
+    plt.legend(loc='upper right', fontsize='x-small')
 
 # name convention
 # virtfuzz-ehci.csv virtfuzz-m-ehci.csv
@@ -22,8 +23,8 @@ if ntools == 0:
     exit(1)
 metadata = []
 for filename in sys.argv[1:]:
-    tool = '-'.join(filename.strip('.csv').split('-')[:-1])
-    target = filename.strip('.csv').split('-')[-1]
+    tool = '-'.join(filename[:-4].split('-')[:-1])
+    target = filename[:-4].split('-')[-1]
     metadata.append({'filename': filename, 'tool': tool, 'target': target})
 
 fig, ax = plt.subplots()
