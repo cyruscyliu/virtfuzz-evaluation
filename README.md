@@ -63,3 +63,21 @@ bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-m-ehci- 1 > virtfuzz-
 ```
 python3 cov24plot.py virtfuzz-ehci.csv
 ```
+
+## How to Reporduce and Report Bugs
+
+### Crash QEMU with ASAN and UBSAN
+
+### Delta debug and reproduce it
+
++ Recrash QEMU with corpus
++ Prepare crash-xxx, corpus, QEMU binary and do delta-debugging
++ Double check the results of delta-debugging to get the backtrace
+
+### Write report and send emails
+
++ Backtrace
++ Reproduce
++ Summary
++ Fix
++ Report

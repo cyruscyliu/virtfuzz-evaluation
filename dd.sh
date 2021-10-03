@@ -65,10 +65,12 @@ echo [-] working in $ws
 
 # step 2: create a tester script
 echo "#!/bin/bash" > $ws/picire_tester.sh
-echo "$target $crash -pre_seed_inputs=@\$1 2>&1 | grep -q \"ERROR\";" >> $ws/picire_tester.sh
+echo "export ASAN_OPTIONS=detect_leaks=0" >> $ws/picire_tester.sh
+echo "$target $crash -pre_seed_inputs=@\$1 2>&1 | grep -q -e \"ERROR\" -e \"runtime error\";" >> $ws/picire_tester.sh
 chmod +x $ws/picire_tester.sh
 echo [-] created $ws/picire_tester.sh
 echo "#!/bin/bash" > $ws/picire_reproduce.sh
+echo "export ASAN_OPTIONS=detect_leaks=0" >> $ws/picire_reproduce.sh
 echo "$target $crash -pre_seed_inputs=@\$1" >> $ws/picire_reproduce.sh
 chmod +x $ws/picire_reproduce.sh
 echo [-] created $ws/picire_reproduce.sh
