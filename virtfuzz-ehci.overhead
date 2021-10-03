@@ -1,0 +1,11 @@
+[+] handling virtfuzz-ehci-0.log
+[+] handling virtfuzz-ehci-1.log
+[+] handling virtfuzz-ehci-2.log
+[+] handling virtfuzz-ehci-3.log
+[+] handling virtfuzz-ehci-4.log
+[+] handling virtfuzz-ehci-5.log
+[+] handling virtfuzz-ehci-6.log
+[+] handling virtfuzz-ehci-7.log
+[+] handling virtfuzz-ehci-8.log
+[+] handling virtfuzz-ehci-9.log
+[+] median: 2866.5, average: 2817.2740805373724, std: 605.6297395297082
