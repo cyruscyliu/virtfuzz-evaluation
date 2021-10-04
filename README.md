@@ -57,6 +57,9 @@ popd
 ```
 bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-ehci- > virtfuzz-ehci.csv
 bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-m-ehci- 1 > virtfuzz-m-ehci.csv
+bash -x covtablegen.sh ehci.c reports/cov-profile-qtest-ehci- > qtest-ehci.csv
+bash -x covtablegen.sh uhci.c reports/cov-profile-qtest-uhci- > qtest-uhci.csv
+bash -x covtablegen.sh ohci.c reports/cov-profile-qtest-ohci- > qtest-ohci.csv
 ```
 
 ### Plot branch cov over time

@@ -1,3 +1,5 @@
 reports
 profile-*
-crash-*
+crasht-
+*.tar.gz
+*.pdf
