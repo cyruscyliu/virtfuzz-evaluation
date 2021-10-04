@@ -1,0 +1,11 @@
+[+] handling qtest-ehci-0.log
+[+] handling qtest-ehci-1.log
+[+] handling qtest-ehci-2.log
+[+] handling qtest-ehci-3.log
+[+] handling qtest-ehci-4.log
+[+] handling qtest-ehci-5.log
+[+] handling qtest-ehci-6.log
+[+] handling qtest-ehci-7.log
+[+] handling qtest-ehci-8.log
+[+] handling qtest-ehci-9.log
+[+] median: 100.4, average: 109.49470379169819, std: 24.754936012552417
