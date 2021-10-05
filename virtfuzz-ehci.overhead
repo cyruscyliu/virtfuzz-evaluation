@@ -8,4 +8,4 @@
 [+] handling virtfuzz-ehci-7.log
 [+] handling virtfuzz-ehci-8.log
 [+] handling virtfuzz-ehci-9.log
-[+] median: 2866.5, average: 2817.2740805373724, std: 605.6297395297082
+[+] median: 2060.2, average: 2047.5043501105342, std: 421.7466429072864
