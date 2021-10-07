@@ -24,12 +24,13 @@ popd && popd
 pushd evaluation && ./coverage.sh 5 && popd
 ```
 
-## Evaluation 1: virtfuzz EHCI/OHCI/UHCI, 3 * 10, Machine A
+## Evaluation 1: virtfuzz EHCI/OHCI/UHCI/CS4231a
 ```
 pushd evaluation
 bash -x ./evaluation-01.sh ehci
 bash -x ./evaluation-01.sh ohci
 bash -x ./evaluation-01.sh uhci
+bash -x ./evaluation-01.sh cs4231a
 popd
 ```
 
@@ -42,19 +43,30 @@ bash -x ./evaluation-02.sh uhci
 popd
 ```
 
-## Evaluation 3: qtest EHCI/OHCI/UHCI, 3 * 10, Machine B
+## Evaluation 3: qtest EHCI/OHCI/UHCI/CS4231a
 ```
 pushd evaluation
 bash -x ./evaluation-03.sh ehci
 bash -x ./evaluation-03.sh ohci
 bash -x ./evaluation-03.sh uhci
+bash -x ./evaluation-03.sh cs4231a
 popd
 ```
 
 ## Figures and Tables
 
+### LoC
+```
+git diff d0ed6a69d399ae193959225cdeaa9382746c91cc -- "***.c" "***.h" ":(exclude)tests/qtest/fuzz*/*" > v5.1.0.patch
+git diff 3e13d8e34b53d8f9a3421a816ccfbdc5fa874e98 -- ":(exclude)tests/qtest/fuzz/stateful_fuzz_callbacks.h" > v6.0.50.patch
+cat demo3.py demolib.py | wc
+git diff 5f9489b754055da979876bcb5a357310251c6b87 > llvm-project.patch
+```
+
 ### Generate cov table for each target
 ```
+bash -x clangcovreport.sh ../qemu/build-coverage-5/qemu-fuzz-i386 virtfuzz-ehci-profiles/
+bash -x clangcovreport.sh ../qemu/build-coverage-5/qemu-fuzz-i386 qtest-ehci-profiles/
 bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-ehci- > virtfuzz-ehci.csv
 bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-m-ehci- 1 > virtfuzz-m-ehci.csv
 bash -x covtablegen.sh ehci.c reports/cov-profile-qtest-ehci- > qtest-ehci.csv
