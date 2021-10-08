@@ -3,3 +3,4 @@ profile-*
 crasht-
 *.tar.gz
 *.pdf
+*.log

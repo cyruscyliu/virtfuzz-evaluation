@@ -22,6 +22,8 @@ for timestamp, covs in table.items():
         if column in covs:
             last_cov[column] = covs[column]
         else:
+            if column not in last_cov:
+                last_cov[column] = '0.0'
             table[timestamp][column] = last_cov[column]
 
 # generate table
