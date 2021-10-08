@@ -1,139 +1,59 @@
 [+] handling qtest-ohci-0.log
 [+] handling qtest-ohci-1.log
+MS: 6 (null)-(null)-(null)-(null)-(null)-(null)-#3926283	REDUCE cov: 1763 ft: 11000 corp: 1671/2767Kb lim: 4096 exec/s: 96 rss: 87Mb L: 2423/4096 MS: 7 CrossOver-Custom-ShuffleBytes-Custom-CustomCrossOver-EraseBytes-Custom-
 [+] handling qtest-ohci-2.log
 [+] handling qtest-ohci-3.log
 [+] handling qtest-ohci-4.log
 [+] handling qtest-ohci-5.log
 [+] handling qtest-ohci-6.log
 [+] handling qtest-ohci-7.log
-MS: 1 (null)-#3577535	REDUCE cov: 1786 ft: 10825 corp: 1588/2545Kb lim: 4096 exec/s: 56 rss: 87Mb L: 3303/4096 MS: 1 CustomCrossOver-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x00\x00\x00\xf7"-#3578529	REDUCE cov: 1786 ft: 10825 corp: 1588/2544Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1778/4096 MS: 2 EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3579822	REDUCE cov: 1786 ft: 10825 corp: 1588/2544Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1925/4096 MS: 4 ShuffleBytes-Custom-EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x01\x00\x00\x00\x1f\xff\xff\xff"-#3580437	REDUCE cov: 1786 ft: 10825 corp: 1588/2543Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2830/4096 MS: 9 ShuffleBytes-Custom-CMP-Custom-CustomCrossOver-ChangeBinInt-Custom-EraseBytes-Custom- DE: "\x01\x00\x00\x00\x1f\xff\xff\xff"-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\xff\xff\xff\xff\xff\xff\xfe\xf1"-"FUZZ"-#3583773	REDUCE cov: 1787 ft: 10834 corp: 1592/2554Kb lim: 4096 exec/s: 56 rss: 87Mb L: 4037/4096 MS: 6 CrossOver-Custom-ChangeByte-Custom-CopyPart-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\xff\xff"-#3585861	REDUCE cov: 1787 ft: 10838 corp: 1593/2556Kb lim: 4096 exec/s: 56 rss: 87Mb L: 487/4096 MS: 2 EraseBytes-Custom-
-MS: 3 (null)-(null)-(null)-#3587821	NEW    cov: 1787 ft: 10840 corp: 1594/2560Kb lim: 4096 exec/s: 56 rss: 87Mb L: 4096/4096 MS: 5 ShuffleBytes-Custom-PersAutoDict-Custom-CustomCrossOver- DE: "\xff\xff\xff\xff\xff\xff\xffJ"-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "profile-qtest-ohci-7-1633213350"-#3589983	REDUCE cov: 1787 ft: 10840 corp: 1594/2559Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2249/4096 MS: 2 EraseBytes-Custom-
-MS: 4 (null)-(null)-(null)-(null)-#3590481	REDUCE cov: 1787 ft: 10840 corp: 1594/2559Kb lim: 4096 exec/s: 56 rss: 87Mb L: 550/4096 MS: 2 EraseBytes-Custom-
-MS: 2 (null)-(null)-#3591904	REDUCE cov: 1787 ft: 10840 corp: 1594/2558Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1006/4096 MS: 2 EraseBytes-Custom-
-MS: 6 (null)-(null)-(null)-(null)-(null)-(null)-#3593644	REDUCE cov: 1787 ft: 10840 corp: 1594/2557Kb lim: 4096 exec/s: 56 rss: 87Mb L: 9/4096 MS: 2 EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3596621	REDUCE cov: 1787 ft: 10845 corp: 1596/2561Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1540/4096 MS: 2 EraseBytes-Custom-
-MS: 6 (null)-(null)-(null)-(null)-(null)-(null)-#3598267	REDUCE cov: 1787 ft: 10845 corp: 1596/2561Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1798/4096 MS: 2 EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3599566	REDUCE cov: 1787 ft: 10845 corp: 1596/2560Kb lim: 4096 exec/s: 56 rss: 87Mb L: 501/4096 MS: 2 CrossOver-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x00\x00\x00\x02\x00\x00\x00\x00"-#3600585	REDUCE cov: 1787 ft: 10845 corp: 1596/2560Kb lim: 4096 exec/s: 56 rss: 87Mb L: 3922/4096 MS: 3 CustomCrossOver-EraseBytes-Custom-
-MS: 1 (null)-#3601431	REDUCE cov: 1787 ft: 10845 corp: 1596/2559Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1151/4096 MS: 2 CrossOver-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3601847	REDUCE cov: 1787 ft: 10845 corp: 1596/2559Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2249/4096 MS: 2 EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3602413	REDUCE cov: 1787 ft: 10845 corp: 1596/2559Kb lim: 4096 exec/s: 56 rss: 87Mb L: 56/4096 MS: 2 EraseBytes-Custom-
-MS: 3 (null)-(null)-(null)-#3602934	REDUCE cov: 1787 ft: 10845 corp: 1596/2559Kb lim: 4096 exec/s: 56 rss: 87Mb L: 61/4096 MS: 2 EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3605354	REDUCE cov: 1787 ft: 10845 corp: 1596/2557Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2755/4096 MS: 5 CustomCrossOver-CustomCrossOver-CustomCrossOver-EraseBytes-Custom-
-MS: 2 (null)-(null)-#3605854	REDUCE cov: 1787 ft: 10845 corp: 1596/2557Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2305/4096 MS: 2 EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x09\x00"-#3610370	REDUCE cov: 1787 ft: 10845 corp: 1596/2555Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1473/4096 MS: 2 EraseBytes-Custom-
-MS: 1 (null)-#3612623	REDUCE cov: 1787 ft: 10845 corp: 1596/2555Kb lim: 4096 exec/s: 56 rss: 87Mb L: 3521/4096 MS: 7 CustomCrossOver-PersAutoDict-Custom-CopyPart-Custom-EraseBytes-Custom- DE: "\xff\xff\xff\xec"-
-MS: 3 (null)-(null)-(null)-#3616041	REDUCE cov: 1787 ft: 10845 corp: 1596/2553Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1060/4096 MS: 2 EraseBytes-Custom-
-MS: 5 (null)-(null)-(null)-(null)-(null)- DE: "\x00\x00\x00\x00\x00\x00\x00\xbe"-#3619871	REDUCE cov: 1787 ft: 10846 corp: 1597/2555Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1806/4096 MS: 2 CrossOver-Custom-
-MS: 4 (null)-(null)-(null)-(null)-#3620557	REDUCE cov: 1787 ft: 10846 corp: 1597/2555Kb lim: 4096 exec/s: 56 rss: 87Mb L: 3882/4096 MS: 2 EraseBytes-Custom-
-MS: 3 (null)-(null)-(null)- DE: "FUZZ"-#3622249	REDUCE cov: 1787 ft: 10846 corp: 1597/2555Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1281/4096 MS: 2 EraseBytes-Custom-
-MS: 1 (null)-#3624370	REDUCE cov: 1787 ft: 10846 corp: 1597/2553Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2881/4096 MS: 2 EraseBytes-Custom-
-MS: 4 (null)-(null)-(null)-(null)-#3624898	REDUCE cov: 1787 ft: 10846 corp: 1597/2552Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2694/4096 MS: 4 CopyPart-Custom-EraseBytes-Custom-
-MS: 3 (null)-(null)-(null)- DE: "FUZZ"-#3627492	REDUCE cov: 1787 ft: 10846 corp: 1597/2551Kb lim: 4096 exec/s: 56 rss: 87Mb L: 512/4096 MS: 2 EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3629063	REDUCE cov: 1787 ft: 10847 corp: 1598/2554Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1391/4096 MS: 2 EraseBytes-Custom-
-MS: 6 (null)-(null)-(null)-(null)-(null)-(null)-#3632215	REDUCE cov: 1787 ft: 10847 corp: 1598/2554Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1381/4096 MS: 2 EraseBytes-Custom-
-MS: 3 (null)-(null)-(null)-#3632774	REDUCE cov: 1787 ft: 10847 corp: 1598/2554Kb lim: 4096 exec/s: 56 rss: 87Mb L: 304/4096 MS: 4 InsertByte-Custom-EraseBytes-Custom-
-MS: 2 (null)-(null)-#3636591	REDUCE cov: 1787 ft: 10854 corp: 1599/2556Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2634/4096 MS: 2 EraseBytes-Custom-
-MS: 6 (null)-(null)-(null)-(null)-(null)-(null)-#3637031	REDUCE cov: 1787 ft: 10854 corp: 1599/2556Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1648/4096 MS: 10 ChangeByte-Custom-CopyPart-Custom-ShuffleBytes-Custom-ChangeByte-Custom-EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3641229	REDUCE cov: 1787 ft: 10854 corp: 1599/2554Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2314/4096 MS: 2 EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3642160	REDUCE cov: 1787 ft: 10854 corp: 1599/2553Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1633/4096 MS: 7 CustomCrossOver-CustomCrossOver-CustomCrossOver-InsertRepeatedBytes-Custom-EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x00\x00\x00\x03"-#3646016	REDUCE cov: 1787 ft: 10854 corp: 1599/2553Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2797/4096 MS: 2 EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3646638	REDUCE cov: 1787 ft: 10854 corp: 1599/2552Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1443/4096 MS: 4 PersAutoDict-Custom-EraseBytes-Custom- DE: "profile-qtest-ohci-7-1633208686"-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x01\x00\x00\x00\x00\x00\x00T"-#3647292	REDUCE cov: 1787 ft: 10854 corp: 1599/2552Kb lim: 4096 exec/s: 56 rss: 87Mb L: 3107/4096 MS: 6 InsertRepeatedBytes-Custom-CopyPart-Custom-EraseBytes-Custom-
-MS: 6 (null)-(null)-(null)-(null)-(null)-(null)- DE: "\x00\x16"-#3649880	REDUCE cov: 1787 ft: 10855 corp: 1600/2554Kb lim: 4096 exec/s: 56 rss: 87Mb L: 707/4096 MS: 2 EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3652255	REDUCE cov: 1787 ft: 10855 corp: 1600/2552Kb lim: 4096 exec/s: 56 rss: 87Mb L: 954/4096 MS: 2 EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x00\x00\x00\x13"-#3652768	REDUCE cov: 1787 ft: 10855 corp: 1600/2551Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2522/4096 MS: 4 CMP-Custom-EraseBytes-Custom- DE: "\xec\xff\xff\xff"-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3654738	REDUCE cov: 1787 ft: 10857 corp: 1602/2559Kb lim: 4096 exec/s: 56 rss: 87Mb L: 178/4096 MS: 2 EraseBytes-Custom-
-MS: 5 (null)-(null)-(null)-(null)-(null)- DE: "FUZZ"-#3657573	REDUCE cov: 1787 ft: 10869 corp: 1605/2568Kb lim: 4096 exec/s: 56 rss: 87Mb L: 2485/4096 MS: 5 CustomCrossOver-ShuffleBytes-Custom-InsertByte-Custom-
-MS: 3 (null)-(null)-(null)-#3663082	REDUCE cov: 1787 ft: 10869 corp: 1605/2566Kb lim: 4096 exec/s: 56 rss: 87Mb L: 490/4096 MS: 6 EraseBytes-Custom-CMP-Custom-CopyPart-Custom- DE: "\x04\x00\x00\x00\x00\x00\x00\x00"-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\xff\xff\xff\x8e"-#3664870	REDUCE cov: 1787 ft: 10873 corp: 1606/2569Kb lim: 4096 exec/s: 56 rss: 87Mb L: 23/4096 MS: 2 EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3667654	REDUCE cov: 1787 ft: 10874 corp: 1607/2571Kb lim: 4096 exec/s: 56 rss: 87Mb L: 442/4096 MS: 6 InsertRepeatedBytes-Custom-CMP-Custom-EraseBytes-Custom- DE: "\x01\x00"-
-MS: 5 (null)-(null)-(null)-(null)-(null)-#3670644	REDUCE cov: 1787 ft: 10875 corp: 1608/2574Kb lim: 4096 exec/s: 56 rss: 87Mb L: 3439/4096 MS: 5 CustomCrossOver-ChangeBit-Custom-CrossOver-Custom-
-MS: 5 (null)-(null)-(null)-(null)-(null)- DE: "\x01\x00\x00\x01"-#3676486	REDUCE cov: 1787 ft: 10880 corp: 1610/2575Kb lim: 4096 exec/s: 56 rss: 87Mb L: 3985/4096 MS: 5 ChangeBinInt-Custom-CustomCrossOver-EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3678624	REDUCE cov: 1787 ft: 10880 corp: 1610/2574Kb lim: 4096 exec/s: 56 rss: 87Mb L: 3170/4096 MS: 7 ShuffleBytes-Custom-InsertByte-Custom-CustomCrossOver-EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3679540	REDUCE cov: 1787 ft: 10880 corp: 1610/2573Kb lim: 4096 exec/s: 56 rss: 87Mb L: 1273/4096 MS: 4 ChangeByte-Custom-EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3679733	REDUCE cov: 1787 ft: 10880 corp: 1610/2573Kb lim: 4096 exec/s: 56 rss: 87Mb L: 3493/4096 MS: 5 CustomCrossOver-ChangeBit-Custom-CrossOver-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3683222	REDUCE cov: 1787 ft: 10882 corp: 1612/2579Kb lim: 4096 exec/s: 56 rss: 87Mb L: 3900/4096 MS: 5 InsertByte-Custom-CustomCrossOver-EraseBytes-Custom-
-MS: 5 (null)-(null)-(null)-(null)-(null)-#3692063	REDUCE cov: 1787 ft: 10887 corp: 1614/2579Kb lim: 4096 exec/s: 56 rss: 87Mb L: 961/4096 MS: 3 CustomCrossOver-CrossOver-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3696128	REDUCE cov: 1787 ft: 10890 corp: 1615/2581Kb lim: 4096 exec/s: 56 rss: 88Mb L: 214/4096 MS: 4 InsertByte-Custom-EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3700775	REDUCE cov: 1787 ft: 10892 corp: 1616/2584Kb lim: 4096 exec/s: 56 rss: 88Mb L: 2257/4096 MS: 2 EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3704078	NEW    cov: 1787 ft: 10893 corp: 1617/2585Kb lim: 4096 exec/s: 56 rss: 88Mb L: 2937/4096 MS: 2 CrossOver-Custom-
-MS: 5 (null)-(null)-(null)-(null)-(null)- DE: ".\x00\x00\x00\x00\x00\x00\x00"-#3704718	REDUCE cov: 1787 ft: 10893 corp: 1617/2585Kb lim: 4096 exec/s: 56 rss: 88Mb L: 556/4096 MS: 2 EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3704934	REDUCE cov: 1787 ft: 10893 corp: 1617/2585Kb lim: 4096 exec/s: 56 rss: 88Mb L: 2930/4096 MS: 2 EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\xff\xff\xff\xff\xff\xff\xff\x02"-#3706172	REDUCE cov: 1787 ft: 10893 corp: 1617/2585Kb lim: 4096 exec/s: 56 rss: 88Mb L: 768/4096 MS: 2 CrossOver-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3716820	REDUCE cov: 1787 ft: 10895 corp: 1619/2587Kb lim: 4096 exec/s: 56 rss: 88Mb L: 899/4096 MS: 2 EraseBytes-Custom-
-MS: 6 (null)-(null)-(null)-(null)-(null)-(null)-#3723633	REDUCE cov: 1787 ft: 10896 corp: 1620/2584Kb lim: 4096 exec/s: 56 rss: 88Mb L: 105/4096 MS: 2 EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3726825	REDUCE cov: 1787 ft: 10896 corp: 1620/2583Kb lim: 4096 exec/s: 55 rss: 88Mb L: 3427/4096 MS: 6 ChangeBit-Custom-ChangeBit-Custom-EraseBytes-Custom-
-MS: 1 (null)-#3729043	REDUCE cov: 1787 ft: 10897 corp: 1621/2587Kb lim: 4096 exec/s: 55 rss: 88Mb L: 4096/4096 MS: 7 CustomCrossOver-ChangeByte-Custom-CustomCrossOver-CustomCrossOver-ChangeASCIIInt-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3730787	REDUCE cov: 1787 ft: 10897 corp: 1621/2587Kb lim: 4096 exec/s: 55 rss: 88Mb L: 536/4096 MS: 4 ChangeByte-Custom-EraseBytes-Custom-
-MS: 5 ShuffleBytes-Custom-CMP-Custom-CustomCrossOver- DE: "FUZZ"-#3731236	REDUCE cov: 1788 ft: 10898 corp: 1622/2589Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2698/4096 MS: 5 ShuffleBytes-Custom-CMP-Custom-CustomCrossOver- DE: "FUZZ"-
-MS: 2 ChangeBit-Custom-#3736430	REDUCE cov: 1788 ft: 10901 corp: 1624/2596Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1843/4096 MS: 7 InsertRepeatedBytes-Custom-EraseBytes-Custom-CrossOver-Custom-CustomCrossOver-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\xec\xff\xff\xff"-#3736914	REDUCE cov: 1788 ft: 10901 corp: 1624/2595Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1454/4096 MS: 7 CustomCrossOver-ChangeByte-Custom-ChangeByte-Custom-CrossOver-Custom-
-MS: 3 (null)-(null)-(null)-#3741166	REDUCE cov: 1788 ft: 10901 corp: 1624/2593Kb lim: 4096 exec/s: 55 rss: 88Mb L: 197/4096 MS: 2 EraseBytes-Custom-
-MS: 5 (null)-(null)-(null)-(null)-(null)-#3742317	REDUCE cov: 1788 ft: 10901 corp: 1624/2593Kb lim: 4096 exec/s: 55 rss: 88Mb L: 492/4096 MS: 2 EraseBytes-Custom-
-MS: 5 (null)-(null)-(null)-(null)-(null)-#3745588	REDUCE cov: 1788 ft: 10903 corp: 1625/2595Kb lim: 4096 exec/s: 55 rss: 88Mb L: 115/4096 MS: 2 EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3746207	REDUCE cov: 1788 ft: 10903 corp: 1625/2595Kb lim: 4096 exec/s: 55 rss: 88Mb L: 820/4096 MS: 7 CustomCrossOver-CopyPart-Custom-ChangeBinInt-Custom-EraseBytes-Custom-
-MS: 4 (null)-(null)-(null)-(null)-#3746333	REDUCE cov: 1788 ft: 10903 corp: 1625/2595Kb lim: 4096 exec/s: 55 rss: 88Mb L: 851/4096 MS: 2 EraseBytes-Custom-
-MS: 2 (null)-(null)-#3754141	REDUCE cov: 1788 ft: 10908 corp: 1627/2599Kb lim: 4096 exec/s: 55 rss: 88Mb L: 3813/4096 MS: 3 CustomCrossOver-EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3755710	REDUCE cov: 1788 ft: 10909 corp: 1628/2601Kb lim: 4096 exec/s: 55 rss: 88Mb L: 3002/4096 MS: 2 CrossOver-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x01\x00\x00\x00\x00\x00\xff\xfa"-"FUZZ"-#3762710	REDUCE cov: 1788 ft: 10909 corp: 1628/2599Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1593/4096 MS: 5 ChangeBit-Custom-CustomCrossOver-EraseBytes-Custom-
-MS: 3 (null)-(null)-(null)- DE: "\x02\x00\x00\x00\x00\x00\x00\x00"-#3771142	REDUCE cov: 1788 ft: 10911 corp: 1629/2597Kb lim: 4096 exec/s: 55 rss: 88Mb L: 711/4096 MS: 8 PersAutoDict-Custom-InsertRepeatedBytes-Custom-InsertByte-Custom-EraseBytes-Custom- DE: "\x00\x00\x00\x00\x00\x00\x00\x09"-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3772463	REDUCE cov: 1788 ft: 10911 corp: 1629/2597Kb lim: 4096 exec/s: 55 rss: 88Mb L: 4010/4096 MS: 2 CrossOver-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x15\x00\x00\x00\x00\x00\x00\x00"-"profile-qtest-ohci-7-1633269154"-"FUZZ"-#3775448	REDUCE cov: 1788 ft: 10915 corp: 1630/2600Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1453/4096 MS: 4 ShuffleBytes-Custom-EraseBytes-Custom-
-MS: 6 (null)-(null)-(null)-(null)-(null)-(null)-#3782583	REDUCE cov: 1788 ft: 10922 corp: 1632/2601Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2467/4096 MS: 2 CrossOver-Custom-
-MS: 10 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x14\x00"-"profile-qtest-ohci-7-1633275154"-#3786299	REDUCE cov: 1788 ft: 10922 corp: 1632/2600Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1570/4096 MS: 4 InsertRepeatedBytes-Custom-EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3794562	REDUCE cov: 1788 ft: 10933 corp: 1633/2600Kb lim: 4096 exec/s: 55 rss: 88Mb L: 29/4096 MS: 4 CopyPart-Custom-EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3796125	REDUCE cov: 1788 ft: 10933 corp: 1633/2599Kb lim: 4096 exec/s: 55 rss: 88Mb L: 961/4096 MS: 2 EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x01\x00\x00\x12"-#3798653	REDUCE cov: 1788 ft: 10937 corp: 1634/2601Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1572/4096 MS: 7 ChangeByte-Custom-CustomCrossOver-InsertByte-Custom-CrossOver-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3799148	REDUCE cov: 1788 ft: 10937 corp: 1634/2601Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2829/4096 MS: 6 CustomCrossOver-CustomCrossOver-CustomCrossOver-CustomCrossOver-EraseBytes-Custom-
-MS: 10 ChangeASCIIInt-Custom-InsertByte-Custom-ChangeBinInt-Custom-InsertByte-Custom-InsertByte-Custom-#3802256	REDUCE cov: 1788 ft: 10937 corp: 1634/2600Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1344/4096 MS: 8 ChangeASCIIInt-Custom-ChangeASCIIInt-Custom-ChangeBit-Custom-EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3809377	REDUCE cov: 1788 ft: 10942 corp: 1635/2602Kb lim: 4096 exec/s: 55 rss: 88Mb L: 3234/4096 MS: 4 InsertByte-Custom-EraseBytes-Custom-
-MS: 5 (null)-(null)-(null)-(null)-(null)-#3810857	REDUCE cov: 1788 ft: 10942 corp: 1635/2602Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2452/4096 MS: 4 PersAutoDict-Custom-EraseBytes-Custom- DE: "\xe9\x00\x00\x00\x00\x00\x00\x00"-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3812136	REDUCE cov: 1788 ft: 10942 corp: 1635/2600Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2925/4096 MS: 6 InsertRepeatedBytes-Custom-InsertRepeatedBytes-Custom-EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x16\x01\x00\x00\x00\x00\x00\x00"-"\x00\x00\x00\x13"-#3818304	REDUCE cov: 1788 ft: 10945 corp: 1636/2600Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2149/4096 MS: 2 EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x00\x00\x00\x00\x00\x00\x01j"-#3824487	REDUCE cov: 1788 ft: 10945 corp: 1636/2600Kb lim: 4096 exec/s: 55 rss: 88Mb L: 696/4096 MS: 4 ChangeBinInt-Custom-EraseBytes-Custom-
-MS: 4 CustomCrossOver-CopyPart-Custom-CustomCrossOver-#3827239	REDUCE cov: 1788 ft: 10949 corp: 1637/2602Kb lim: 4096 exec/s: 55 rss: 88Mb L: 414/4096 MS: 4 ChangeBinInt-Custom-EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3835762	REDUCE cov: 1788 ft: 10955 corp: 1638/2605Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2212/4096 MS: 2 EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3840765	REDUCE cov: 1788 ft: 10955 corp: 1638/2602Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1266/4096 MS: 4 ChangeBit-Custom-EraseBytes-Custom-
-MS: 3 (null)-(null)-(null)-#3840956	REDUCE cov: 1788 ft: 10955 corp: 1638/2602Kb lim: 4096 exec/s: 55 rss: 88Mb L: 668/4096 MS: 2 EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x0a\x00\x00\x00\x00\x00\x00\x00"-#3847214	REDUCE cov: 1788 ft: 10958 corp: 1639/2603Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2397/4096 MS: 4 InsertByte-Custom-EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3850813	REDUCE cov: 1788 ft: 10958 corp: 1639/2603Kb lim: 4096 exec/s: 55 rss: 88Mb L: 550/4096 MS: 4 ShuffleBytes-Custom-EraseBytes-Custom-
-MS: 3 (null)-(null)-(null)-#3851597	REDUCE cov: 1788 ft: 10958 corp: 1639/2603Kb lim: 4096 exec/s: 55 rss: 88Mb L: 296/4096 MS: 2 EraseBytes-Custom-
-MS: 5 ChangeBinInt-Custom-InsertByte-Custom-CustomCrossOver-#3852171	REDUCE cov: 1788 ft: 10958 corp: 1639/2602Kb lim: 4096 exec/s: 55 rss: 88Mb L: 499/4096 MS: 2 EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3857978	REDUCE cov: 1788 ft: 10958 corp: 1639/2601Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1146/4096 MS: 2 EraseBytes-Custom-
-MS: 7 CustomCrossOver-ChangeASCIIInt-Custom-CustomCrossOver-CustomCrossOver-ShuffleBytes-Custom-#3858802	REDUCE cov: 1788 ft: 10958 corp: 1639/2601Kb lim: 4096 exec/s: 55 rss: 88Mb L: 3070/4096 MS: 7 ChangeBit-Custom-ShuffleBytes-Custom-CustomCrossOver-EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3864861	REDUCE cov: 1788 ft: 10958 corp: 1639/2599Kb lim: 4096 exec/s: 55 rss: 88Mb L: 341/4096 MS: 6 PersAutoDict-Custom-ChangeASCIIInt-Custom-EraseBytes-Custom- DE: "r\x00\x00\x00\x00\x00\x00\x00"-
-MS: 6 (null)-(null)-(null)-(null)-(null)-(null)- DE: "FUZZ"-#3866805	REDUCE cov: 1788 ft: 10958 corp: 1639/2599Kb lim: 4096 exec/s: 55 rss: 88Mb L: 152/4096 MS: 2 EraseBytes-Custom-
-MS: 2 CMP-Custom- DE: "\x89\x00\x00\x00\x00\x00\x00\x00"-#3867541	REDUCE cov: 1788 ft: 10958 corp: 1639/2599Kb lim: 4096 exec/s: 55 rss: 88Mb L: 678/4096 MS: 2 EraseBytes-Custom-
-MS: 8 CMP-Custom-CustomCrossOver-ShuffleBytes-Custom-InsertRepeatedBytes-Custom-CustomCrossOver- DE: "\xff\xff\xff\x13"-#3869244	REDUCE cov: 1788 ft: 10958 corp: 1639/2598Kb lim: 4096 exec/s: 55 rss: 88Mb L: 383/4096 MS: 2 EraseBytes-Custom-
-MS: 5 CustomCrossOver-ShuffleBytes-Custom-ChangeBinInt-Custom-#3870587	REDUCE cov: 1788 ft: 10958 corp: 1639/2598Kb lim: 4096 exec/s: 55 rss: 88Mb L: 3869/4096 MS: 5 PersAutoDict-Custom-CustomCrossOver-EraseBytes-Custom- DE: "\xff\x15"-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3878362	REDUCE cov: 1788 ft: 10958 corp: 1639/2596Kb lim: 4096 exec/s: 55 rss: 88Mb L: 250/4096 MS: 2 EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "FUZZ"-#3879794	REDUCE cov: 1788 ft: 10958 corp: 1639/2596Kb lim: 4096 exec/s: 55 rss: 88Mb L: 550/4096 MS: 2 EraseBytes-Custom-
-MS: 3 ChangeByte-Custom-CustomCrossOver-#3885372	REDUCE cov: 1788 ft: 10958 corp: 1639/2596Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1243/4096 MS: 4 InsertRepeatedBytes-Custom-EraseBytes-Custom-
-MS: 7 CustomCrossOver-PersAutoDict-Custom-CustomCrossOver-CustomCrossOver-CMP-Custom- DE: "\x89\x00\x00\x00\x00\x00\x00\x00"-"\x03\x00\x00\x00\x00\x00\x00\x00"-#3890706	REDUCE cov: 1788 ft: 10959 corp: 1640/2597Kb lim: 4096 exec/s: 55 rss: 88Mb L: 425/4096 MS: 2 EraseBytes-Custom-
-MS: 4 (null)-(null)-(null)-(null)-#3892498	REDUCE cov: 1788 ft: 10959 corp: 1640/2596Kb lim: 4096 exec/s: 55 rss: 88Mb L: 286/4096 MS: 2 EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x00\x00\x00\x09"-#3900740	REDUCE cov: 1788 ft: 10959 corp: 1640/2593Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1524/4096 MS: 8 InsertByte-Custom-ShuffleBytes-Custom-PersAutoDict-Custom-EraseBytes-Custom- DE: "\x13\x00\x00\x00\x00\x00\x00\x00"-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x9a\x00\x00\x00\x00\x00\x00\x00"-"\x01\x00\x00\x00\x00\x00\xff\xf3"-#3906446	REDUCE cov: 1788 ft: 10959 corp: 1640/2592Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1210/4096 MS: 2 EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x13\x00\x00\x00"-#3906799	REDUCE cov: 1788 ft: 10959 corp: 1640/2592Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2060/4096 MS: 2 EraseBytes-Custom-
-MS: 1 (null)-#3908889	REDUCE cov: 1788 ft: 10960 corp: 1641/2595Kb lim: 4096 exec/s: 55 rss: 88Mb L: 492/4096 MS: 2 EraseBytes-Custom-
-MS: 8 CMP-Custom-CustomCrossOver-PersAutoDict-Custom-ChangeByte-Custom-CustomCrossOver- DE: "\x19\x00\x00\x00\x00\x00\x00\x00"-"\xec\xff\xff\xff"-#3913870	REDUCE cov: 1788 ft: 10960 corp: 1641/2594Kb lim: 4096 exec/s: 55 rss: 88Mb L: 457/4096 MS: 2 EraseBytes-Custom-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\xff\xff\xff\xff\xff\xff\xfe\xfd"-#3919276	REDUCE cov: 1788 ft: 10960 corp: 1641/2592Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2867/4096 MS: 2 EraseBytes-Custom-
-MS: 5 CustomCrossOver-ChangeBinInt-Custom-ChangeByte-Custom-#3920973	REDUCE cov: 1788 ft: 10960 corp: 1641/2591Kb lim: 4096 exec/s: 55 rss: 88Mb L: 1144/4096 MS: 2 EraseBytes-Custom-
-MS: 8 ShuffleBytes-Custom-CustomCrossOver-ChangeBinInt-Custom-EraseBytes-Custom-CustomCrossOver-#3924888	REDUCE cov: 1788 ft: 10964 corp: 1642/2594Kb lim: 4096 exec/s: 55 rss: 88Mb L: 752/4096 MS: 8 CrossOver-Custom-ChangeBit-Custom-EraseBytes-Custom-CopyPart-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3925937	REDUCE cov: 1788 ft: 10968 corp: 1643/2598Kb lim: 4096 exec/s: 55 rss: 88Mb L: 3950/4096 MS: 4 CustomCrossOver-CustomCrossOver-CustomCrossOver-CustomCrossOver-
-MS: 7 CustomCrossOver-ChangeByte-Custom-CustomCrossOver-InsertByte-Custom-CustomCrossOver-#3929228	REDUCE cov: 1788 ft: 10968 corp: 1643/2597Kb lim: 4096 exec/s: 55 rss: 88Mb L: 119/4096 MS: 2 EraseBytes-Custom-
-MS: 6 (null)-(null)-(null)-(null)-(null)-(null)-#3935309	REDUCE cov: 1788 ft: 10968 corp: 1643/2594Kb lim: 4096 exec/s: 55 rss: 88Mb L: 4030/4096 MS: 5 ChangeASCIIInt-Custom-CustomCrossOver-CrossOver-Custom-
-MS: 1 (null)-#3936733	REDUCE cov: 1788 ft: 10968 corp: 1643/2593Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2795/4096 MS: 2 EraseBytes-Custom-
-MS: 1 (null)-#3942346	REDUCE cov: 1788 ft: 10970 corp: 1644/2597Kb lim: 4096 exec/s: 55 rss: 88Mb L: 516/4096 MS: 8 ChangeBinInt-Custom-CMP-Custom-ShuffleBytes-Custom-EraseBytes-Custom- DE: "\x01\x00\x00\x00"-
-MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)-#3945160	REDUCE cov: 1788 ft: 10971 corp: 1645/2600Kb lim: 4096 exec/s: 55 rss: 88Mb L: 2415/4096 MS: 9 CustomCrossOver-ChangeASCIIInt-Custom-ChangeBit-Custom-ChangeBinInt-Custom-EraseBytes-Custom-
-MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-#3946862	REDUCE cov: 1788 ft: 10971 corp: 1645/2600Kb lim: 4096 exec/s: 55 rss: 88Mb L: 410/4096 MS: 7 CustomCrossOver-CustomCrossOver-ChangeByte-Custom-CustomCrossOver-EraseBytes-Custom-
-MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "\x01\xff"-#3958641	REDUCE cov: 1788 ft: 11000 corp: 1648/2607Kb lim: 4096 exec/s: 55 rss: 88Mb L: 656/4096 MS: 4 CMP-Custom-EraseBytes-Custom- DE: "profile-qtest-ohci-7-1633268554"-
 [+] handling qtest-ohci-8.log
+MS: 6 (null)-(null)-(null)-(null)-(null)-(null)- DE: "#4708766	REDUCE cov: 1748 ft: 10827 corp: 1660/2263Kb lim: 4096 exec/s: 91 rss: 87Mb L: 4096/4096 MS: 6 CMP-Custom-CustomCrossOver-EraseBytes-Custom-CustomCrossOver- DE: "\xfd\x08//\x00\x00\x00\x00"-
+MS: 6 (null)-(null)-(null)-(null)-(null)-(null)-#4709407	REDUCE cov: 1748 ft: 10827 corp: 1660/2263Kb lim: 4096 exec/s: 91 rss: 87Mb L: 470/4096 MS: 2 EraseBytes-Custom-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4719140	REDUCE cov: 1748 ft: 10836 corp: 1663/2273Kb lim: 4096 exec/s: 91 rss: 87Mb L: 406/4096 MS: 6 ChangeByte-Custom-ChangeASCIIInt-Custom-EraseBytes-Custom-
+MS: 10 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4719181	REDUCE cov: 1748 ft: 10836 corp: 1663/2273Kb lim: 4096 exec/s: 91 rss: 87Mb L: 186/4096 MS: 2 EraseBytes-Custom-
+MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4720048	REDUCE cov: 1748 ft: 10838 corp: 1664/2277Kb lim: 4096 exec/s: 90 rss: 87Mb L: 4096/4096 MS: 7 CustomCrossOver-CopyPart-Custom-CMP-Custom-ChangeBinInt-Custom- DE: "\x00\x00\x00\x00\x00\x0b\xff\xff"-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4721244	REDUCE cov: 1748 ft: 10838 corp: 1664/2277Kb lim: 4096 exec/s: 90 rss: 87Mb L: 1265/4096 MS: 6 CMP-Custom-ShuffleBytes-Custom-EraseBytes-Custom- DE: "\x0b\x00\x00\x00\x00\x00\x00\x00"-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4722901	REDUCE cov: 1748 ft: 10838 corp: 1664/2277Kb lim: 4096 exec/s: 90 rss: 87Mb L: 2647/4096 MS: 2 EraseBytes-Custom-
+MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4723072	REDUCE cov: 1748 ft: 10838 corp: 1664/2277Kb lim: 4096 exec/s: 90 rss: 87Mb L: 283/4096 MS: 2 EraseBytes-Custom-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4725439	REDUCE cov: 1748 ft: 10847 corp: 1665/2280Kb lim: 4096 exec/s: 90 rss: 87Mb L: 1862/4096 MS: 4 InsertByte-Custom-EraseBytes-Custom-
+MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4728544	REDUCE cov: 1748 ft: 10847 corp: 1665/2280Kb lim: 4096 exec/s: 90 rss: 87Mb L: 608/4096 MS: 2 EraseBytes-Custom-
+MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4728863	REDUCE cov: 1748 ft: 10847 corp: 1665/2280Kb lim: 4096 exec/s: 90 rss: 87Mb L: 1885/4096 MS: 7 CustomCrossOver-ChangeBinInt-Custom-ChangeBinInt-Custom-EraseBytes-Custom-
+MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4731663	REDUCE cov: 1749 ft: 10848 corp: 1666/2282Kb lim: 4096 exec/s: 90 rss: 87Mb L: 2705/4096 MS: 9 InsertRepeatedBytes-Custom-CMP-Custom-CustomCrossOver-CopyPart-Custom-EraseBytes-Custom- DE: "\x02\x00"-
+MS: 10 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4732250	REDUCE cov: 1749 ft: 10848 corp: 1666/2282Kb lim: 4096 exec/s: 90 rss: 87Mb L: 853/4096 MS: 2 EraseBytes-Custom-
+MS: 10 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4733998	REDUCE cov: 1749 ft: 10849 corp: 1667/2285Kb lim: 4096 exec/s: 90 rss: 87Mb L: 769/4096 MS: 4 ChangeByte-Custom-EraseBytes-Custom-
+MS: 10 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4735455	REDUCE cov: 1749 ft: 10849 corp: 1667/2285Kb lim: 4096 exec/s: 90 rss: 87Mb L: 61/4096 MS: 2 EraseBytes-Custom-
+MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4737835	REDUCE cov: 1749 ft: 10849 corp: 1667/2284Kb lim: 4096 exec/s: 90 rss: 87Mb L: 239/4096 MS: 5 ChangeBinInt-Custom-EraseBytes-Custom-CustomCrossOver-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4740197	REDUCE cov: 1749 ft: 10849 corp: 1667/2284Kb lim: 4096 exec/s: 90 rss: 87Mb L: 1294/4096 MS: 2 EraseBytes-Custom-
+MS: 10 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4740410	REDUCE cov: 1749 ft: 10849 corp: 1667/2284Kb lim: 4096 exec/s: 90 rss: 87Mb L: 1886/4096 MS: 5 ShuffleBytes-Custom-CustomCrossOver-EraseBytes-Custom-
+MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4744729	REDUCE cov: 1749 ft: 10849 corp: 1667/2283Kb lim: 4096 exec/s: 90 rss: 87Mb L: 2771/4096 MS: 2 EraseBytes-Custom-
+MS: 10 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4747204	REDUCE cov: 1749 ft: 10849 corp: 1667/2283Kb lim: 4096 exec/s: 90 rss: 87Mb L: 717/4096 MS: 2 EraseBytes-Custom-
+MS: 5 (null)-(null)-(null)-(null)-(null)- DE: "#4748455	REDUCE cov: 1749 ft: 10849 corp: 1667/2283Kb lim: 4096 exec/s: 90 rss: 87Mb L: 704/4096 MS: 2 EraseBytes-Custom-
+MS: 4 (null)-(null)-(null)-(null)- DE: "#4749411	REDUCE cov: 1749 ft: 10849 corp: 1667/2283Kb lim: 4096 exec/s: 90 rss: 87Mb L: 209/4096 MS: 2 EraseBytes-Custom-
+MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4753056	REDUCE cov: 1749 ft: 10849 corp: 1667/2282Kb lim: 4096 exec/s: 90 rss: 87Mb L: 971/4096 MS: 2 EraseBytes-Custom-
+MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4753437	REDUCE cov: 1749 ft: 10849 corp: 1667/2281Kb lim: 4096 exec/s: 90 rss: 87Mb L: 191/4096 MS: 5 EraseBytes-Custom-ChangeByte-Custom-CustomCrossOver-
+MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4753713	REDUCE cov: 1749 ft: 10849 corp: 1667/2281Kb lim: 4096 exec/s: 90 rss: 87Mb L: 283/4096 MS: 2 EraseBytes-Custom-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4758964	REDUCE cov: 1749 ft: 10895 corp: 1668/2284Kb lim: 4096 exec/s: 90 rss: 87Mb L: 258/4096 MS: 2 EraseBytes-Custom-
+MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4765854	REDUCE cov: 1749 ft: 10897 corp: 1669/2288Kb lim: 4096 exec/s: 90 rss: 87Mb L: 4096/4096 MS: 7 CustomCrossOver-CMP-Custom-ChangeBit-Custom-ChangeByte-Custom- DE: "OK"-
+MS: 5 (null)-(null)-(null)-(null)-(null)- DE: "#4766431	REDUCE cov: 1749 ft: 10897 corp: 1669/2288Kb lim: 4096 exec/s: 90 rss: 87Mb L: 1491/4096 MS: 2 EraseBytes-Custom-
+MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4772387	REDUCE cov: 1749 ft: 10897 corp: 1669/2287Kb lim: 4096 exec/s: 90 rss: 87Mb L: 3199/4096 MS: 4 InsertByte-Custom-EraseBytes-Custom-
+MS: 5 (null)-(null)-(null)-(null)-(null)- DE: "#4772420	REDUCE cov: 1749 ft: 10897 corp: 1669/2287Kb lim: 4096 exec/s: 90 rss: 87Mb L: 2649/4096 MS: 5 PersAutoDict-Custom-CustomCrossOver-EraseBytes-Custom- DE: "\x08\x00"-
+MS: 10 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4775922	REDUCE cov: 1749 ft: 10897 corp: 1669/2285Kb lim: 4096 exec/s: 90 rss: 87Mb L: 1952/4096 MS: 7 ChangeBit-Custom-PersAutoDict-Custom-CustomCrossOver-EraseBytes-Custom- DE: "\xb8\x00\x00\x00"-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4776867	REDUCE cov: 1749 ft: 10897 corp: 1669/2285Kb lim: 4096 exec/s: 90 rss: 87Mb L: 960/4096 MS: 4 CMP-Custom-EraseBytes-Custom- DE: "\x00\x00\x00\x00\x00\x00\x00\xb6"-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4778283	REDUCE cov: 1749 ft: 10897 corp: 1669/2285Kb lim: 4096 exec/s: 90 rss: 87Mb L: 399/4096 MS: 6 ChangeByte-Custom-PersAutoDict-Custom-EraseBytes-Custom- DE: "\x01\x00\x01\xeb"-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4779639	REDUCE cov: 1749 ft: 10897 corp: 1669/2285Kb lim: 4096 exec/s: 90 rss: 87Mb L: 2023/4096 MS: 5 EraseBytes-Custom-ChangeByte-Custom-CustomCrossOver-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4782846	REDUCE cov: 1749 ft: 10897 corp: 1669/2284Kb lim: 4096 exec/s: 90 rss: 87Mb L: 571/4096 MS: 2 EraseBytes-Custom-
+MS: 6 (null)-(null)-(null)-(null)-(null)-(null)- DE: "#4784383	REDUCE cov: 1749 ft: 10897 corp: 1669/2284Kb lim: 4096 exec/s: 90 rss: 87Mb L: 194/4096 MS: 2 EraseBytes-Custom-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4788269	REDUCE cov: 1749 ft: 10897 corp: 1669/2284Kb lim: 4096 exec/s: 90 rss: 87Mb L: 103/4096 MS: 4 ChangeByte-Custom-EraseBytes-Custom-
+MS: 4 (null)-(null)-(null)-(null)- DE: "#4790316	REDUCE cov: 1749 ft: 10897 corp: 1669/2284Kb lim: 4096 exec/s: 90 rss: 87Mb L: 123/4096 MS: 4 ChangeByte-Custom-EraseBytes-Custom-
+MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4790822	REDUCE cov: 1749 ft: 10897 corp: 1669/2284Kb lim: 4096 exec/s: 90 rss: 87Mb L: 55/4096 MS: 2 EraseBytes-Custom-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4792540	REDUCE cov: 1749 ft: 10897 corp: 1669/2283Kb lim: 4096 exec/s: 90 rss: 87Mb L: 3500/4096 MS: 6 ChangeByte-Custom-CustomCrossOver-CustomCrossOver-EraseBytes-Custom-
+MS: 10 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4793453	REDUCE cov: 1749 ft: 10897 corp: 1669/2283Kb lim: 4096 exec/s: 90 rss: 87Mb L: 1184/4096 MS: 3 CustomCrossOver-EraseBytes-Custom-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4795359	REDUCE cov: 1749 ft: 10897 corp: 1669/2283Kb lim: 4096 exec/s: 90 rss: 87Mb L: 2513/4096 MS: 4 ChangeASCIIInt-Custom-EraseBytes-Custom-
+MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4795570	REDUCE cov: 1749 ft: 10897 corp: 1669/2283Kb lim: 4096 exec/s: 90 rss: 87Mb L: 906/4096 MS: 2 EraseBytes-Custom-
+MS: 8 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4795696	REDUCE cov: 1749 ft: 10897 corp: 1669/2282Kb lim: 4096 exec/s: 90 rss: 87Mb L: 140/4096 MS: 2 EraseBytes-Custom-
+MS: 9 (null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4795867	REDUCE cov: 1749 ft: 10897 corp: 1669/2282Kb lim: 4096 exec/s: 90 rss: 87Mb L: 520/4096 MS: 2 EraseBytes-Custom-
+MS: 7 (null)-(null)-(null)-(null)-(null)-(null)-(null)- DE: "#4796821	REDUCE cov: 1749 ft: 10897 corp: 1669/2282Kb lim: 4096 exec/s: 90 rss: 87Mb L: 677/4096 MS: 7 CMP-Custom-ShuffleBytes-Custom-CustomCrossOver-EraseBytes-Custom- DE: "cloc"-
+MS: 9 EraseBytes-Custom-EraseBytes-Custom-CustomCrossOver-PersAutoDict-Custom-CopyPart-Custom- DE: "#4796995	REDUCE cov: 1749 ft: 10897 corp: 1669/2282Kb lim: 4096 exec/s: 90 rss: 87Mb L: 595/4096 MS: 8 ChangeByte-Custom-ChangeBit-Custom-EraseBytes-Custom-CMP-Custom- DE: "\x01\x00\x00\x00\x00\x00\x04\xd1"-
 [+] handling qtest-ohci-9.log
-[+] median: 93.3, average: 106.27068198709625, std: 42.54300836058742
+[+] median: 127.75, average: 141.69756776628734, std: 48.565208958361524
