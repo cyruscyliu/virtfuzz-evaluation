@@ -24,33 +24,31 @@ popd && popd
 pushd evaluation && ./coverage.sh 5 && popd
 ```
 
-## Evaluation 1: virtfuzz EHCI/OHCI/UHCI/CS4231a
+## Evaluation 1: virtfuzz EHCI
 ```
 pushd evaluation
 bash -x ./evaluation-01.sh ehci
-bash -x ./evaluation-01.sh ohci
-bash -x ./evaluation-01.sh uhci
-bash -x ./evaluation-01.sh cs4231a
 popd
 ```
 
-## Evaluation 2: virtfuzz-m EHCI/OHCI/UHCI, 3 * 10, Machine B
+## Evaluation 2: virtfuzz-m EHCI
 ```
 pushd evaluation
 bash -x ./evaluation-02.sh ehci
-bash -x ./evaluation-02.sh ohci
-bash -x ./evaluation-02.sh uhci
 popd
 ```
 
-## Evaluation 3: qtest EHCI/OHCI/UHCI/CS4231a
+## Evaluation 3: qtest EHCI/OHCI/UHCI/CS4231a/E1000/RTL8139/ATI-VGA/Megasas
 ```
 pushd evaluation
 bash -x ./evaluation-03.sh ehci
-bash -x ./evaluation-03.sh ohci
-bash -x ./evaluation-03.sh uhci
-bash -x ./evaluation-03.sh cs4231a
+bash -x ./evaluation-03.sh megaraid
 popd
+```
+
+## Evaluation 4: virtfuzz everything else
+```
+parallel --bar -j 10 < evaluation-04-xxx.sh
 ```
 
 ## Figures and Tables
@@ -66,17 +64,18 @@ git diff 5f9489b754055da979876bcb5a357310251c6b87 > llvm-project.patch
 ### Generate cov table for each target
 ```
 bash -x clangcovreport.sh ../qemu/build-coverage-5/qemu-fuzz-i386 virtfuzz-ehci-profiles/
-bash -x clangcovreport.sh ../qemu/build-coverage-5/qemu-fuzz-i386 qtest-ehci-profiles/
 bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-ehci- > virtfuzz-ehci.csv
 bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-m-ehci- 1 > virtfuzz-m-ehci.csv
-bash -x covtablegen.sh ehci.c reports/cov-profile-qtest-ehci- > qtest-ehci.csv
-bash -x covtablegen.sh uhci.c reports/cov-profile-qtest-uhci- > qtest-uhci.csv
-bash -x covtablegen.sh ohci.c reports/cov-profile-qtest-ohci- > qtest-ohci.csv
 ```
 
 ### Plot branch cov over time
 ```
 python3 cov24plot.py virtfuzz-ehci.csv
+```
+
+### Calculate overhead
+```
+python3 overhead24cal.py virtfuzz-ehci-*.log > virtfuzz-ehci.overhead
 ```
 
 ## How to Reporduce and Report Bugs
