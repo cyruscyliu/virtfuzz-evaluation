@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import sys
-import seaborn as sns
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -30,7 +29,6 @@ for filename in sys.argv[1:]:
 fig, ax = plt.subplots()
 ax.set_xscale('log')
 ax.set_ylabel('Branch Coverage')
-plt.xticks([10, 60, 600, 3600, 86400], ['10s', '1m', '10m', '1h', '24h'])
 ax.set_ylim(0, 1)
 ax.yaxis.set_major_formatter(mtick.PercentFormatter(1))
 ax.set_aspect(4.9, adjustable='box')
@@ -40,4 +38,5 @@ shadowcolor = ['0.6', '0.7', '0.8', '0.9']
 for i, md in enumerate(metadata):
     plot(md, linestyle[i], shadowcolor[i])
 
+plt.xticks([10, 60, 600, 3600, 86400], ['10s', '1m', '10m', '1h', '24h'])
 plt.savefig('{}.pdf'.format('@'.join(sys.argv[1:])), bbox_inches='tight')
