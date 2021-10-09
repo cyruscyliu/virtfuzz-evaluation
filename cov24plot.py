@@ -10,8 +10,9 @@ def plot(metadata, linestyle, shadowcolor):
     filename = metadata['filename']
     data = pd.read_csv(filename)
     data['timestamp'] -= data['timestamp'][0]
-    plt.plot(data['timestamp'], data['avg'], linestyle, linewidth=2, color='black', label=metadata['tool'])
-    plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor)
+    plt.plot(data['timestamp'], data['avg'], linestyle, linewidth=2, color='black',
+             label=metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace('-f', '-WF').replace('-m', '-M').replace('qtest', 'QEMUFuzzer'))
+    plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.8)
     plt.legend(loc='upper right', fontsize='x-small')
 
 # name convention
