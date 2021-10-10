@@ -8,6 +8,7 @@ bash -x covtablegen-new.sh ohci.c reports/cov-profile-qtest-ohci- > qtest-ohci.c
 bash -x covtablegen-new.sh uhci.c qtestuhcireports/cov-profile-qtest-uhci- > qtest-uhci.csv
 bash -x covtablegen-new.sh ehci.c qtestehcireports/cov-profile-qtest-ehci- > qtest-ehci.csv
 
+bash -x covtablegen-new.sh ohci.c reports/cov-profile-virtfuzz-ohci- > virtfuzz-ohci.csv
 bash -x covtablegen-new.sh uhci.c reports/cov-profile-virtfuzz-uhci- > virtfuzz-uhci.csv
 bash -x covtablegen-new.sh ehci.c virtfuzzehcireports/cov-profile-virtfuzz-ehci- > virtfuzz-ehci.csv
 
@@ -23,5 +24,5 @@ python3 cov24plot.py virtfuzz-ehci.csv virtfuzz-m-ehci.csv virtfuzz-f-ehci.csv q
 python3 cov24plot.py qtest-cs4231a.csv
 python3 cov24plot.py qtest-rtl8139.csv
 python3 cov24plot.py virtfuzz-ehci.csv qtest-ehci.csv
-python3 cov24plot.py qtest-ohci.csv
+python3 cov24plot.py virtfuzz-ohci.csv qtest-ohci.csv
 python3 cov24plot.py qtest-megasas.csv
