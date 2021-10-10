@@ -11,10 +11,10 @@ bash -x covtablegen-new.sh ehci.c qtestehcireports/cov-profile-qtest-ehci- > qte
 bash -x covtablegen-new.sh uhci.c reports/cov-profile-virtfuzz-uhci- > virtfuzz-uhci.csv
 bash -x covtablegen-new.sh ehci.c virtfuzzehcireports/cov-profile-virtfuzz-ehci- > virtfuzz-ehci.csv
 
-# bash -x covtablegen-new.sh uhci.c reports/cov-profile-virtfuzz-m-uhci- 1 > virtfuzz-m-uhci.csv
+# bash -x covtablegen-new.sh uhci.c reports/cov-profile-virtfuzz-f-uhci- 1 > virtfuzz-f-uhci.csv
 bash -x covtablegen-new.sh ehci.c reports/cov-profile-virtfuzz-f-ehci- 1 > virtfuzz-f-ehci.csv
 
-# bash -x covtablegen-new.sh uhci.c reports/cov-profile-virtfuzz-f-uhci- 1 > virtfuzz-f-uhci.csv
+bash -x covtablegen-new.sh uhci.c reports/cov-profile-virtfuzz-m-uhci- 1 > virtfuzz-m-uhci.csv
 bash -x covtablegen-new.sh ehci.c virtfuzzmehcireports/cov-profile-virtfuzz-m-ehci- 1 > virtfuzz-m-ehci.csv
 
 python3 cov24plot.py virtfuzz-e1000.csv qtest-e1000.csv
