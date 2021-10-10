@@ -24,32 +24,20 @@ popd && popd
 pushd evaluation && ./coverage.sh 5 && popd
 ```
 
-## Evaluation 1: virtfuzz EHCI
-```
-pushd evaluation
-bash -x ./evaluation-01.sh ehci
-popd
-```
+## Evaluation 1: virtfuzz EHCI/OHCI/UHCI/CS4231a/E1000/RTL8139/ATI-VGA/Megasas
+>bash -x ./evaluation-01.sh ehci/ohci/uhci/cs4231a/e1000/rtl8139/ati/megasas
 
-## Evaluation 2: virtfuzz-m EHCI
-```
-pushd evaluation
-bash -x ./evaluation-02.sh ehci
-popd
-```
+## Evaluation 2: virtfuzz-m EHCI/OHCI/UHCI
+>bash -x ./evaluation-02.sh ehci/ohci/uhci
 
-## Evaluation 3: qtest EHCI/OHCI/UHCI/CS4231a/E1000/RTL8139/ATI-VGA/Megasas
-```
-pushd evaluation
-bash -x ./evaluation-03.sh ehci
-bash -x ./evaluation-03.sh megaraid
-popd
-```
+## Evaluation 3: qtest EHCI/OHCI/UHCI/CS4231a/E1000/RTL8139/Megasas
+>bash -x ./evaluation-03.sh ehci/ohic/uhci/cs4231a/e1000/rtl8139/megasas
 
 ## Evaluation 4: virtfuzz everything else
-```
-parallel --bar -j 10 < evaluation-04-xxx.sh
-```
+>parallel --bar -j 10 < evaluation-04-xxx.sh
+
+## Evaluation 5: virtfuzz-mf EHIC/OHCI/UHCI
+>bash -x ./evaluation-05.sh ehci/ohci/uhci
 
 ## Figures and Tables
 
@@ -64,6 +52,7 @@ git diff 5f9489b754055da979876bcb5a357310251c6b87 > llvm-project.patch
 ### Generate cov table for each target
 ```
 bash -x clangcovreport.sh ../qemu/build-coverage-5/qemu-fuzz-i386 virtfuzz-ehci-profiles/
+# for covtablegen.sh, you have to ajust the filename and the parse inside
 bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-ehci- > virtfuzz-ehci.csv
 bash -x covtablegen.sh ehci.c reports/cov-profile-virtfuzz-m-ehci- 1 > virtfuzz-m-ehci.csv
 ```
