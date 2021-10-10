@@ -10,10 +10,14 @@ for line in sys.stdin:
         continue
     # timestamp,run,cov
     timestamp, run, cov = items
+    timestamp = int(timestamp)
     if timestamp not in table:
         table[timestamp] = {}
     table[timestamp][run] = cov
     columns.add(run)
+
+# sort by timestamp
+table = {k : table[k] for k in sorted(table)}
 
 # fill in gaps
 last_cov = {}
@@ -22,8 +26,6 @@ for timestamp, covs in table.items():
         if column in covs:
             last_cov[column] = covs[column]
         else:
-            if column not in last_cov:
-                last_cov[column] = '0.0'
             table[timestamp][column] = last_cov[column]
 
 # generate table
@@ -44,4 +46,4 @@ for timestamp, covs in table.items():
 
 # output table
 for row in outputs:
-    print(','.join(row))
+    print(','.join([str(i) for i in row]))
