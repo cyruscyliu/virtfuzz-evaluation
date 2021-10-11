@@ -1,6 +1,5 @@
-reports
+*reports
 profile-*
 crash-*
 *.tar.gz
-*.pdf
 *.log
