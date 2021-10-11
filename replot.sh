@@ -26,5 +26,5 @@ python3 cov24plot.py virtfuzz-ehci.csv virtfuzz-m-ehci.csv virtfuzz-f-ehci.csv q
 python3 cov24plot.py qtest-cs4231a.csv
 python3 cov24plot.py qtest-rtl8139.csv
 python3 cov24plot.py virtfuzz-ehci.csv qtest-ehci.csv
-python3 cov24plot.py virtfuzz-ohci.csv virtfuzz-m-ohci.csv qtest-ohci.csv
+python3 cov24plot.py virtfuzz-ohci.csv virtfuzz-m-ohci.csv virtfuzz-f-ohci.csv qtest-ohci.csv
 python3 cov24plot.py qtest-megasas.csv
