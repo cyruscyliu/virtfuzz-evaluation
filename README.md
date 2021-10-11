@@ -52,13 +52,14 @@ git diff 5f9489b754055da979876bcb5a357310251c6b87 > llvm-project.patch
 ### Generate cov table for each target
 ```
 bash -x clangcovreport.sh ../qemu/build-coverage-5/qemu-fuzz-i386 virtfuzz-ehci-profiles/
-# please at replot.sh
+# please look at replot.sh
 bash -x covtablegen-new.sh ehci.c reports/cov-profile-virtfuzz-ehci- > virtfuzz-ehci.csv
 ```
 
 ### Plot branch cov over time
 ```
-# please at replot.sh
+# please look at replot.sh
+python3 -m pip install numpy pandas matplotlib
 python3 cov24plot.py virtfuzz-ehci.csv
 ```
 
