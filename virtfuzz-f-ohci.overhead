@@ -1,0 +1,11 @@
+[+] handling virtfuzz-f-ohci-logs/virtfuzz-f-ohci-0.log
+[+] handling virtfuzz-f-ohci-logs/virtfuzz-f-ohci-1.log
+[+] handling virtfuzz-f-ohci-logs/virtfuzz-f-ohci-2.log
+[+] handling virtfuzz-f-ohci-logs/virtfuzz-f-ohci-3.log
+[+] handling virtfuzz-f-ohci-logs/virtfuzz-f-ohci-4.log
+[+] handling virtfuzz-f-ohci-logs/virtfuzz-f-ohci-5.log
+[+] handling virtfuzz-f-ohci-logs/virtfuzz-f-ohci-6.log
+[+] handling virtfuzz-f-ohci-logs/virtfuzz-f-ohci-7.log
+[+] handling virtfuzz-f-ohci-logs/virtfuzz-f-ohci-8.log
+[+] handling virtfuzz-f-ohci-logs/virtfuzz-f-ohci-9.log
+[+] median: 210.4, average: 209.2089927446903, std: 25.877556089428293
