@@ -28,4 +28,4 @@ python3 cov24plot.py virtfuzz-rtl8139.csv qtest-rtl8139.csv
 python3 cov24plot.py virtfuzz-ehci.csv qtest-ehci.csv
 python3 cov24plot.py virtfuzz-ohci.csv virtfuzz-m-ohci.csv virtfuzz-f-ohci.csv qtest-ohci.csv
 python3 cov24plot.py virtfuzz-megasas.csv qtest-megasas.csv
-python3 cov24plot.py virtfuzz-ati.csv
+python3 cov24plot.py virtfuzz-ati.csv virtfuzz-ati2d.csv
