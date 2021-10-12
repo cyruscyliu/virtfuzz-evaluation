@@ -10,10 +10,14 @@ def plot(metadata, linestyle, shadowcolor):
     filename = metadata['filename']
     data = pd.read_csv(filename)
     data['timestamp'] -= data['timestamp'][0]
-    plt.plot(data['timestamp'], data['avg'], linestyle, linewidth=2, color='black',
-             label=metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace('-f', '-WF').replace('-m', '-M').replace('qtest', 'QEMUFuzzer'))
+    label = metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace('-f', '-WF').replace('-m', '-M').replace('qtest', 'QEMUFuzzer')
+    if metadata['target'] == 'ati':
+        label += ' (ati.c)'
+    elif metadata['target'] == 'ati2d':
+        label += ' (ati_2d.c)'
+    plt.plot(data['timestamp'], data['avg'], linestyle, linewidth=2, color='black', label=label)
     plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.8)
-    plt.legend(loc='upper right', fontsize='x-small')
+    plt.legend(loc='upper left', fontsize='x-small')
 
 # name convention
 # virtfuzz-ehci.csv virtfuzz-m-ehci.csv
