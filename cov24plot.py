@@ -10,7 +10,7 @@ def plot(metadata, linestyle, shadowcolor):
     filename = metadata['filename']
     data = pd.read_csv(filename)
     data['timestamp'] -= data['timestamp'][0]
-    label = metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace('-f', '-WF').replace('-m', '-M').replace('qtest', 'QEMUFuzzer')
+    label = metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace('-f', '-NP').replace('-m', '-M').replace('qtest', 'QEMUFuzzer')
     if metadata['target'] == 'ati':
         label += ' (ati.c)'
     elif metadata['target'] == 'ati2d':
@@ -35,6 +35,7 @@ fig, ax = plt.subplots()
 ax.set_xscale('log')
 ax.set_ylabel('Branch Coverage')
 ax.set_ylim(0, 1)
+ax.set_xlim(1, 86400)
 ax.yaxis.set_major_formatter(mtick.PercentFormatter(1))
 ax.set_aspect(4.9, adjustable='box')
 
