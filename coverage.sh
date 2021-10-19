@@ -4,7 +4,7 @@ cd ../qemu/build-coverage-$VERSION
 if [ $VERSION == '6' ]; then
     CLANG_COV_DUMP=1 CC=clang CXX=clang++ ../configure --enable-fuzzing \
         --disable-werror --disable-sanitizers \
-        --extra-cflags="-DCLANG_COV_DUMP -fprofile-instr-generate -fcoverage-mapping" \
+        --extra-cflags="-DCLANG_COV_DUMP -DVIRTFUZZ_LESS_CRASHES -fprofile-instr-generate -fcoverage-mapping" \
         --target-list="i386-softmmu arm-softmmu aarch64-softmmu"
     ninja qemu-fuzz-i386 qemu-fuzz-arm qemu-fuzz-aarch64
     cd $OLDPWD
@@ -12,7 +12,7 @@ elif [ $VERSION == '5' ]; then
     CLANG_COV_DUMP=1 CC=clang CXX=clang++ ../configure \
         --disable-werror --disable-sanitizers \
         --target-list="i386-softmmu arm-softmmu aarch64-softmmu"
-    make CONFIG_FUZZ=y CFLAGS="-DCLANG_COV_DUMP -fsanitize=fuzzer \
+    make CONFIG_FUZZ=y CFLAGS="-DCLANG_COV_DUMP -DVIRTFUZZ_LESS_CRASHES -fsanitize=fuzzer \
         -fprofile-instr-generate -fcoverage-mapping" -j$(nproc) \
         i386-softmmu/fuzz arm-softmmu/fuzz aarch64-softmmu/fuzz
     cp i386-softmmu/qemu-fuzz-i386 .
