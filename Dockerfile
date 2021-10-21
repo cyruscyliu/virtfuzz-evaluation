@@ -50,3 +50,14 @@ RUN apt-get install -y screen
 RUN apt-get install -y parallel
 RUN pip3 install picire
 RUN apt-get install -y htop cpulimit
+RUN apt-get install -y meson autoconf-archive python2.7 libopus-dev
+RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py && python2.7 get-pip.py && \
+ln -s /usr/bin/python2.7 /usr/bin/python2 && python2 -m pip install six pyparsing
+#Update spice-protocol and spice-server
+RUN git config --global http.sslverify false
+RUN git clone https://gitlab.freedesktop.org/spice/spice-protocol.git --depth=1
+RUN cd spice-protocol && meson --buildtype=release build-default && ninja -C build-default && \
+ninja -C build-default dist && ninja -C build-default install && cd
+RUN git clone https://gitlab.freedesktop.org/spice/spice.git --depth=1
+RUN cd spice && ./autogen.sh && ./configure --prefix=/usr --sysconfdir=/etc \
+--localstatedir=/var --libdir=/usr/lib && make && make install && cd

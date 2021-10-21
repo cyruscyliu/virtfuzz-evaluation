@@ -8,4 +8,4 @@
 [+] handling virtfuzz-ohci-logs/virtfuzz-ohci-7.log
 [+] handling virtfuzz-ohci-logs/virtfuzz-ohci-8.log
 [+] handling virtfuzz-ohci-logs/virtfuzz-ohci-9.log
-[+] median: 302.2, average: 409.61512908123285, std: 272.803871609236
+[+] median: 639.2, average: 750.6958402499008, std: 350.349154309850

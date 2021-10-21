@@ -74,6 +74,11 @@ echo "export ASAN_OPTIONS=detect_leaks=0" >> $ws/picire_reproduce.sh
 echo "$target $crash -pre_seed_inputs=@\$1" >> $ws/picire_reproduce.sh
 chmod +x $ws/picire_reproduce.sh
 echo [-] created $ws/picire_reproduce.sh
+echo "#!/bin/bash" > $ws/picire_latest.sh
+echo "export ASAN_OPTIONS=detect_leaks=0" >> $ws/picire_latest.sh
+echo "$target $crash -pre_seed_inputs=@\$1" >> $ws/picire_latest.sh
+chmod +x $ws/picire_latest.sh
+echo [-] created $ws/picire_latest.sh
 
 # step 3: create an input
 find $seeds -type f | sort -t/ -k4 > $ws/picire_inputs
@@ -86,3 +91,4 @@ time picire --input=$ws/picire_inputs --test=$ws/picire_tester.sh \
 
 echo [-] saved output to $ws/picire_inputs.*/picire_inputs
 echo [-] run $ws/picire_reproduce.sh $ws/picire_inputs.*/picire_inputs
+echo [-] modify and run $ws/picire_latest.sh $ws/picire_inputs.*/picire_inputs
