@@ -84,3 +84,11 @@ python3 overhead24cal.py virtfuzz-ehci-*.log > virtfuzz-ehci.overhead
 + Summary
 + Fix
 + Report
+
+### Reproduce V-Shuttle
+
+```bash
+./coverage-vshuttle.sh 5 ehci
+bash -x vshuttle-setup.sh ehci 12
+bash -x vshuttle-fuzz.sh ehci
+```

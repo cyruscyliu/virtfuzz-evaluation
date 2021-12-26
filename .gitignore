@@ -3,3 +3,6 @@ profile-*
 crash-*
 *.tar.gz
 *.log
+*-in
+*-out
+*-seed
