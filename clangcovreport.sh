@@ -21,14 +21,14 @@ REPORTS=$3
 rm /tmp/clangcovreport-*.sh
 rm /tmp/*.profdata
 profiles=$(find $2 -name profile* -type f)
+mkdir -p $REPORTS
+cp $BINARY $REPORTS
 for profraw in $profiles; do
     TOOL=$(basename $profraw | cut -d"-" -f2)
     DEVICE=$(basename $profraw | cut -d"-" -f3)
     TIMESTAMP=$(basename $profraw | cut -d"-" -f4)
     profdata=/tmp/$(basename $profraw).profdata
     echo "llvm-profdata merge -output=$profdata $profraw" >> /tmp/clangcovreport-merge.sh
-    mkdir -p $REPORTS
-    cp $BINARY $REPORTS
     output=$REPORTS/cov-$(basename $profraw)
     echo "llvm-cov report $BINARY -instr-profile=$profdata -format=text -summary-only > $output" >> /tmp/clangcovreport-report.sh
 done
