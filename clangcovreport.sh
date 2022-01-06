@@ -16,6 +16,7 @@
 
 BINARY=$1
 DIR=$2
+REPORTS=$3
 
 rm /tmp/clangcovreport-*.sh
 rm /tmp/*.profdata
@@ -26,8 +27,9 @@ for profraw in $profiles; do
     TIMESTAMP=$(basename $profraw | cut -d"-" -f4)
     profdata=/tmp/$(basename $profraw).profdata
     echo "llvm-profdata merge -output=$profdata $profraw" >> /tmp/clangcovreport-merge.sh
-    mkdir -p reports/
-    output=reports/cov-$(basename $profraw)
+    mkdir -p $REPORTS
+    cp $BINARY $REPORTS
+    output=$REPORTS/cov-$(basename $profraw)
     echo "llvm-cov report $BINARY -instr-profile=$profdata -format=text -summary-only > $output" >> /tmp/clangcovreport-report.sh
 done
 

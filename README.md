@@ -4,7 +4,7 @@
 
 ### Build Docker for Evaluation 
 ```
-git clone https://git.secos.mobi:9930/all_projects/userspacefuzzing/evaluation.git evaluation
+git clone git@github.com:cyruscyliu/virtfuzz-evaluation.git evaluation
 pushd evaluation
 sudo docker build -t qemu-spa:latest .
 popd
@@ -51,7 +51,7 @@ git diff 5f9489b754055da979876bcb5a357310251c6b87 > llvm-project.patch
 
 ### Generate cov table for each target
 ```
-bash -x clangcovreport.sh ../qemu/build-coverage-5/qemu-fuzz-i386 virtfuzz-ehci-profiles/
+bash -x clangcovreport.sh ../qemu/build-coverage-5/qemu-fuzz-i386 virtfuzz-ehci-profiles/ virtfuzz-ehci-reports/
 bash -x covtablegen-new.sh ehci.c reports/cov-profile-virtfuzz-ehci- > virtfuzz-ehci.csv
 ```
 
