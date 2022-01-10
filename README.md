@@ -12,9 +12,10 @@ popd
 
 ### Install VirtFuzz for QEMU 5.1.0
 ```
-git clone -b v5.1.0-virtfuzz https://git.secos.mobi:9930/all_projects/userspacefuzzing/qemu-local.git qemu --depth=1
+# git clone -b v5.1.0-virtfuzz git@github.com:cyruscyliu/virtfuzz-qemu.git qemu --depth=1 # for qtest and legacy videzzo
+git clone -b v5.1.0-group-mutators git@github.com:cyruscyliu/virtfuzz-qemu.git qemu --depth=1 # for videzzo
 pushd qemu && mkdir build-coverage-5 && popd
-git clone https://git.secos.mobi:9930/all_projects/userspacefuzzing/llvm-project-local.git llvm-project --depth=1
+git clone git@github.com:cyruscyliu/virtfuzz-llvm-project.git llvm-project --depth=1
 cp evaluation/run.sh .
 sudo bash run.sh # Enter the container
 pushd llvm-project && mkdir build-custom && pushd build-custom
