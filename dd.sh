@@ -81,7 +81,8 @@ chmod +x $ws/picire_latest.sh
 echo [-] created $ws/picire_latest.sh
 
 # step 3: create an input
-find $seeds -type f | sort -t/ -k4 > $ws/picire_inputs
+n=$(awk -F"/" '{print NF + 1}' <<< $seeds)
+find $seeds -type f | sort -t/ -k$n > $ws/picire_inputs
 echo [-] created $ws/picire_inputs
 
 # step 4: let's start dd
