@@ -9,6 +9,6 @@ cp i386-softmmu/qemu-fuzz-i386 .
 cp arm-softmmu/qemu-fuzz-arm .
 cp aarch64-softmmu/qemu-fuzz-aarch64 .
 # stage 2
-./qemu-fuzz-i386 --fuzz-target=videzzo-fuzz-${target} -max_total_time=600 -detect_leaks=0
+./qemu-fuzz-i386 --fuzz-target=videzzo-fuzz-${target} -detect_leaks=0
 # stage 3
 popd
