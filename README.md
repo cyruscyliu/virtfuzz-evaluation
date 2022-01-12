@@ -2,7 +2,7 @@
 
 ## General settings
 
-### Build Docker for Evaluation 
+### Build Docker for Evaluation
 ```
 git clone git@github.com:cyruscyliu/virtfuzz-evaluation.git evaluation
 pushd evaluation
@@ -20,7 +20,7 @@ cp evaluation/run.sh .
 sudo bash run.sh # Enter the container
 pushd llvm-project && mkdir build-custom && pushd build-custom
 cmake -G Ninja -DLLVM_USE_LINKER=gold -DLLVM_ENABLE_PROJECTS="clang;compiler-rt" -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_OPTIMIZED_TABLEGEN=ON ../llvm/
-ninja clang compiler-rt llvm-symbolizer llvm-profdata llvm-cov
+ninja clang compiler-rt llvm-symbolizer llvm-profdata llvm-cov llvm-config
 popd && popd
 pushd evaluation && ./coverage.sh 5 && popd
 ```
@@ -85,11 +85,3 @@ python3 overhead24cal.py virtfuzz-ehci-*.log > virtfuzz-ehci.overhead
 + Summary
 + Fix
 + Report
-
-### Reproduce V-Shuttle
-
-```bash
-./coverage-vshuttle.sh 5 ehci
-bash -x vshuttle-setup.sh ehci 12
-bash -x vshuttle-fuzz.sh ehci
-```
