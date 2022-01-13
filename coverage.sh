@@ -10,7 +10,7 @@ if [ $VERSION == '6' ]; then
     cd $OLDPWD
 elif [ $VERSION == '5' ]; then
     CLANG_COV_DUMP=1 CC=clang CXX=clang++ ../configure \
-        --disable-werror --disable-sanitizers \
+        --disable-werror --enable-videzzo --disable-sanitizers \
         --target-list="i386-softmmu arm-softmmu aarch64-softmmu"
     make CONFIG_FUZZ=y CFLAGS="-DCLANG_COV_DUMP -DVIRTFUZZ_LESS_CRASHES -fsanitize=fuzzer \
         -fprofile-instr-generate -fcoverage-mapping" -j$(nproc) \

@@ -9,7 +9,7 @@ if [ $VERSION == '6' ]; then
     cd $OLDPWD
 elif [ $VERSION == '5' ]; then
     CC=clang CXX=clang++ ../configure --enable-debug \
-        --disable-werror --enable-sanitizers \
+        --disable-werror --enable-videzzo --enable-sanitizers \
         --target-list="i386-softmmu arm-softmmu aarch64-softmmu"
     make CONFIG_FUZZ=y CFLAGS="-fsanitize=fuzzer -g" -j$(nproc) \
         i386-softmmu/fuzz arm-softmmu/fuzz aarch64-softmmu/fuzz
