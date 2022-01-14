@@ -10,7 +10,7 @@ def plot(metadata, linestyle, shadowcolor):
     filename = metadata['filename']
     data = pd.read_csv(filename)
     data['timestamp'] -= data['timestamp'][0]
-    label = metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace('-f', '-NP').replace('-m', '-M').replace('qtest', 'QEMUFuzzer')
+    label = metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace('-f', '-NP').replace('-m', '-NH').replace('qtest', 'QEMUFuzzer').replace('vshuttle', 'V-Shuttle-S')
     if metadata['target'] == 'ati':
         label += ' (ati.c)'
     elif metadata['target'] == 'ati2d':
@@ -35,14 +35,19 @@ fig, ax = plt.subplots()
 ax.set_xscale('log')
 ax.set_ylabel('Branch Coverage')
 ax.set_ylim(0, 1)
-ax.set_xlim(1, 86400)
+ax.set_xlim(0.9, 86400)
 ax.yaxis.set_major_formatter(mtick.PercentFormatter(1))
 ax.set_aspect(4.9, adjustable='box')
 
-linestyle = ['-', '--', '-.', ':']
-shadowcolor = ['0.6', '0.7', '0.8', '0.9']
+linestyle = ['-', '--', '-.', ':', '.']
+# shadowcolor = ['0.55', '0.65', '0.75', '0.85', '0.95']
+shadowcolor = ['lightcoral', 'navajowhite', 'lightgreen', 'skyblue', 'violet']
 for i, md in enumerate(metadata):
     plot(md, linestyle[i], shadowcolor[i])
 
 plt.xticks([10, 60, 600, 3600, 86400], ['10s', '1m', '10m', '1h', '24h'])
+plt.axvline(x=10, color='purple', linestyle='dotted')
+if len(metadata) >= 4:
+    plt.axvline(x=1800, color='purple', linestyle='dotted')
+plt.axvline(x=3600, color='purple', linestyle='dotted')
 plt.savefig('{}.pdf'.format('@'.join(sys.argv[1:])), bbox_inches='tight')
