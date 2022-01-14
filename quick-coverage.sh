@@ -1,6 +1,7 @@
 #!/bin/bash
 
-target=$1
+arch=$1
+target=$2
 # stage 1
 pushd ../qemu/build-coverage-5
 make CONFIG_FUZZ=y CFLAGS="-DCLANG_COV_DUMP -DVIRTFUZZ_LESS_CRASHES -fsanitize=fuzzer \
@@ -11,9 +12,9 @@ cp arm-softmmu/qemu-fuzz-arm .
 cp aarch64-softmmu/qemu-fuzz-aarch64 .
 # stage 2
 rm -rf clangcovdump.profraw
-./qemu-fuzz-i386 --fuzz-target=videzzo-fuzz-${target} -max_total_time=600
+./qemu-fuzz-${arch} --fuzz-target=videzzo-fuzz-${target} -max_total_time=600
 # stage 3
 llvm-profdata merge -output=clangcovdump.profraw $(ls clangcovdump.profraw-* | tail -n 1)
-llvm-cov show ./qemu-fuzz-i386 -instr-profile=clangcovdump.profraw -format=html -output-dir=/root/reports/${target} ../
+llvm-cov show ./qemu-fuzz-${arch} -instr-profile=clangcovdump.profraw -format=html -output-dir=/root/reports/${target} ../
 echo "please check /root/reports/${target}"
 popd
