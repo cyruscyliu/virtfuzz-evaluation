@@ -1,12 +1,14 @@
 # evaluation 1
-python3 cov24plot.py nyx-ac97.csv virtfuzz-ac97.csv qtest-ac97.csv
 python3 cov24plot.py virtfuzz-ac97.csv qtest-ac97.csv
-python3 cov24plot.py nyx-cs4231a.csv virtfuzz-cs4231a.csv qtest-cs4231a.csv
+python3 cov24plot.py virtfuzz-ac97.csv qtest-ac97.csv nyx-ac97.csv
 python3 cov24plot.py virtfuzz-cs4231a.csv qtest-cs4231a.csv
+python3 cov24plot.py virtfuzz-cs4231a.csv qtest-cs4231a.csv nyx-cs4231a.csv
 python3 cov24plot.py virtfuzz-es1370.csv qtest-es1370.csv
 python3 cov24plot.py virtfuzz-intel-hda.csv qtest-intel-hda.csv
+python3 cov24plot.py virtfuzz-intel-hda.csv qtest-intel-hda.csv nyx-intel-hda.csv
 python3 cov24plot.py virtfuzz-sb16.csv qtest-sb16.csv
 python3 cov24plot.py virtfuzz-ahci.csv qtest-ahci.csv
+python3 cov24plot.py qtest-floppy.csv nyx-floppy.csv # missing qtest-floopy.csv
 python3 cov24plot.py virtfuzz-sdhci.csv qtest-sdhci.csv
 python3 cov24plot.py virtfuzz-megasas.csv qtest-megasas.csv
 python3 cov24plot.py virtfuzz-e1000.csv qtest-e1000.csv

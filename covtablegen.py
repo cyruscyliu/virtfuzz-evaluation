@@ -40,6 +40,7 @@ for timestamp, covs in table.items():
     dataf = [float(i) for i in data]
     output += data
     output.append('{}'.format(max(dataf)))
+    # we remove 0.0!
     output.append('{}'.format(min(dataf)))
     output.append('{}'.format(round(sum(dataf) / len(columns), 4)))
     outputs.append(output)
