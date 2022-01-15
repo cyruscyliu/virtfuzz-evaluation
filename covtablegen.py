@@ -41,8 +41,12 @@ for timestamp, covs in table.items():
     output += data
     output.append('{}'.format(max(dataf)))
     # we remove 0.0!
-    output.append('{}'.format(min(dataf)))
-    output.append('{}'.format(round(sum(dataf) / len(columns), 4)))
+    dataf_without_zero = []
+    for d in dataf:
+        if d != 0.0:
+            dataf_without_zero.append(d)
+    output.append('{}'.format(min(dataf_without_zero)))
+    output.append('{}'.format(round(sum(dataf_without_zero) / len(columns), 4)))
     outputs.append(output)
 
 # output table
