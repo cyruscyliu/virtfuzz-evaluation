@@ -8,7 +8,7 @@ python3 cov24plot.py virtfuzz-intel-hda.csv qtest-intel-hda.csv
 python3 cov24plot.py virtfuzz-intel-hda.csv qtest-intel-hda.csv nyx-intel-hda.csv
 python3 cov24plot.py virtfuzz-sb16.csv qtest-sb16.csv
 python3 cov24plot.py virtfuzz-ahci.csv qtest-ahci.csv
-python3 cov24plot.py virtfuzz-floppy.csv qtest-floppy.csv nyx-floppy.csv # missing qtest-floopy.csv
+python3 cov24plot.py virtfuzz-floppy.csv qtest-floppy.csv nyx-floppy.csv
 python3 cov24plot.py virtfuzz-sdhci.csv qtest-sdhci.csv
 python3 cov24plot.py virtfuzz-megasas.csv qtest-megasas.csv
 python3 cov24plot.py virtfuzz-e1000.csv qtest-e1000.csv
