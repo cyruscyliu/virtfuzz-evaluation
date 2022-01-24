@@ -45,6 +45,8 @@ for timestamp, covs in table.items():
     for d in dataf:
         if d != 0.0:
             dataf_without_zero.append(d)
+    if len(dataf_without_zero) == 0:
+        dataf_without_zero = [0.0]
     output.append('{}'.format(min(dataf_without_zero)))
     output.append('{}'.format(round(sum(dataf_without_zero) / len(dataf_without_zero), 4)))
     outputs.append(output)
