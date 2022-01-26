@@ -10,7 +10,7 @@ def plot(metadata, linestyle, shadowcolor):
     filename = metadata['filename']
     data = pd.read_csv(filename)
     data['timestamp'] -= data['timestamp'][0]
-    label = metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace('-f', '-NP').replace('-m', '-NH').replace('qtest', 'QEMUFuzzer').replace('vshuttle', 'V-Shuttle-S').replace('-intel', '').replace('-cirrus', '')
+    label = metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace('-f', '-NP').replace('-m', '-NH').replace('qtest', 'QEMUFuzzer').replace('vshuttle', 'V-Shuttle-S').replace('-intel', '').replace('-cirrus', '').replace('nyx', 'NYX')
     if metadata['target'] == 'ati':
         label += ' (ati)'
     elif metadata['target'] == 'ati2d':

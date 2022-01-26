@@ -7,16 +7,22 @@ python3 cov24plot.py virtfuzz-es1370.csv qtest-es1370.csv
 python3 cov24plot.py virtfuzz-intel-hda.csv qtest-intel-hda.csv
 python3 cov24plot.py virtfuzz-intel-hda.csv qtest-intel-hda.csv nyx-intel-hda.csv
 python3 cov24plot.py virtfuzz-sb16.csv qtest-sb16.csv
+python3 cov24plot.py virtfuzz-sb16.csv qtest-sb16.csv nyx-sb16.csv
 python3 cov24plot.py virtfuzz-ahci.csv qtest-ahci.csv
+python3 cov24plot.py virtfuzz-floppy.csv qtest-floppy.csv
 python3 cov24plot.py virtfuzz-floppy.csv qtest-floppy.csv nyx-floppy.csv
 python3 cov24plot.py virtfuzz-sdhci.csv qtest-sdhci.csv
 python3 cov24plot.py virtfuzz-megasas.csv qtest-megasas.csv
 python3 cov24plot.py virtfuzz-e1000.csv qtest-e1000.csv
+python3 cov24plot.py virtfuzz-e1000.csv qtest-e1000.csv nyx-e1000.csv
 python3 cov24plot.py virtfuzz-e1000e.csv virtfuzz-e1000e_core.csv qtest-e1000e.csv qtest-e1000e_core.csv
-python3 cov24plot.py virtfuzz-eepro100.csv qtest-eepro100.csv
+python3 cov24plot.py virtfuzz-eepro100.csv qtest-eepro100.csv nyx-eepro100.csv
 python3 cov24plot.py virtfuzz-ne2000.csv qtest-ne2000.csv
+python3 cov24plot.py virtfuzz-ne2000.csv qtest-ne2000.csv nyx-ne2000.csv
 python3 cov24plot.py virtfuzz-pcnet.csv qtest-pcnet.csv
+python3 cov24plot.py virtfuzz-pcnet.csv qtest-pcnet.csv nyx-pcnet.csv
 python3 cov24plot.py virtfuzz-rtl8139.csv qtest-rtl8139.csv
+python3 cov24plot.py virtfuzz-rtl8139.csv qtest-rtl8139.csv nyx-rtl8139.csv
 python3 cov24plot.py virtfuzz-ati.csv virtfuzz-ati2d.csv
 python3 cov24plot.py virtfuzz-cirrus-vga.csv qtest-cirrus-vga.csv
 python3 cov24plot.py virtfuzz-uhci.csv qtest-uhci.csv
