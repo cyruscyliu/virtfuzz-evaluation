@@ -26,6 +26,16 @@ pushd evaluation && ./coverage.sh 5 1 && popd # videzzo
 # pushd evaluation && ./coverage.sh 5 0 && popd # qemufuzzer
 ```
 
+### Run QEMUFuzzer
+```
+bash -x evaluation-03.sh TARGET
+```
+
+### Run ViDeZZo
+```
+bash -x evaluation-01.sh TARGET
+```
+
 ### Generate cov table for each target
 ```
 bash -x clangcovreport.sh ../qemu/build-coverage-5/qemu-fuzz-i386 virtfuzz-ehci-profiles/ virtfuzz-ehci-reports/
