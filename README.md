@@ -6,7 +6,7 @@
 ```
 git clone git@github.com:cyruscyliu/virtfuzz-evaluation.git evaluation
 pushd evaluation
-sudo docker build -t qemu-spa:latest .
+sudo docker build -t virtfuzz:latest .
 popd
 ```
 
@@ -19,8 +19,8 @@ git clone git@github.com:cyruscyliu/virtfuzz-llvm-project.git llvm-project --dep
 cp evaluation/run.sh .
 sudo bash run.sh # Enter the container
 pushd llvm-project && mkdir build-custom && pushd build-custom
-cmake -G Ninja -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;ld" -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_OPTIMIZED_TABLEGEN=ON ../llvm/
-ninja clang compiler-rt llvm-symbolizer llvm-profdata llvm-cov llvm-config ld
+cmake -G Ninja -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;lld" -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_OPTIMIZED_TABLEGEN=ON ../llvm/
+ninja clang compiler-rt llvm-symbolizer llvm-profdata llvm-cov llvm-config lld
 popd && popd
 pushd evaluation && ./coverage.sh 5 1 && popd # videzzo
 # pushd evaluation && ./coverage.sh 5 0 && popd # qemufuzzer

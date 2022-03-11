@@ -5,4 +5,4 @@ docker run --rm \
     -v $PWD/llvm-project:/root/llvm-project \
     -e PATH=$PATH:/root/llvm-project/build-custom/bin \
     --privileged \
-    -it qemu-spa:latest /bin/bash
+    -it virtfuzz:latest /bin/bash
