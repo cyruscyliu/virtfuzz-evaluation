@@ -15,7 +15,7 @@ elif [ $VERSION == '5' ]; then
             --disable-werror --enable-videzzo --disable-sanitizers \
             --target-list="i386-softmmu arm-softmmu aarch64-softmmu"
     else
-        CLANG_COV_DUMP=1 CC=clang CXX=clang++ ../configure \
+        CLANG_COV_DUMP=1 CC=clang-10 CXX=clang++-10 ../configure \
             --disable-werror --disable-sanitizers \
             --target-list="i386-softmmu arm-softmmu aarch64-softmmu"
     fi
