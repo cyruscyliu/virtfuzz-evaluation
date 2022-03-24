@@ -12,8 +12,8 @@ popd
 
 ### Test VirtFuzz for QEMU 5.1.0
 ```
-git clone -b v5.1.0-virtfuzz git@github.com:cyruscyliu/virtfuzz-qemu.git qemu --depth=1 # videzzo
-# git clone -b v5.1.0-qemufuzzer git@github.com:cyruscyliu/virtfuzz-qemu.git qemu --depth=1 # qemufuzzer
+git clone -b v5.1.0-videzzo git@github.com:cyruscyliu/virtfuzz-qemu.git qemu-videzzo --depth=1
+# git clone -b v5.1.0-qemufuzzer git@github.com:cyruscyliu/virtfuzz-qemu.git qemu-qemufuzzer --depth=1
 pushd qemu && mkdir build-coverage-5 && popd
 git clone git@github.com:cyruscyliu/virtfuzz-llvm-project.git llvm-project --depth=1
 cp evaluation/run.sh .
