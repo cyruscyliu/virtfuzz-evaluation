@@ -34,6 +34,8 @@ bash -x evaluation-03.sh TARGET
 ### Run ViDeZZo
 ```
 bash -x evaluation-01.sh TARGET
+bash -x evaluation-01.sh TARGET # disable intra-message annotation
+bash -x evaluation-01.sh TARGET # disable intra-message annotation but enable fork server
 ```
 
 ### Generate cov table for each target

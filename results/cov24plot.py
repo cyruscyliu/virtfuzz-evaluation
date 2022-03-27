@@ -10,7 +10,10 @@ def plot(metadata, linestyle, shadowcolor):
     filename = metadata['filename']
     data = pd.read_csv(filename)
     data['timestamp'] -= data['timestamp'][0]
-    label = metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace('-f', '-NP').replace('-m', '-NH').replace('qtest', 'QEMUFuzzer').replace('vshuttle', 'V-Shuttle-S').replace('-intel', '').replace('-cirrus', '').replace('nyx', 'NYX')
+    label = metadata['tool'].replace('virtfuzz', 'ViDeZZo').replace(
+        '-f', '-NPF').replace('-m', '-NIMA').replace('qtest', 'QEMUFuzzer').replace(
+            'vshuttle', 'V-Shuttle-S').replace('-intel', '').replace(
+                '-cirrus', '').replace('nyx', 'NYX')
     if metadata['target'] == 'ati':
         label += ' (ati)'
     elif metadata['target'] == 'ati2d':
@@ -19,7 +22,7 @@ def plot(metadata, linestyle, shadowcolor):
         label += ' (e1000e)'
     elif metadata['target'] == 'e1000e_core':
         label += ' (e1000e_core)'
-    print(metadata['target'])
+
     plt.plot(data['timestamp'], data['avg'], linestyle, linewidth=2, color='black', label=label)
     plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.8)
     plt.legend(loc='upper left', fontsize='x-small')
