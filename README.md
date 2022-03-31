@@ -20,7 +20,7 @@ cp evaluation/run.sh .
 sudo bash run.sh # Enter the container
 pushd llvm-project && mkdir build-custom && pushd build-custom
 cmake -G Ninja -DLLVM_ENABLE_PROJECTS="clang;compiler-rt;lld" -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_OPTIMIZED_TABLEGEN=ON ../llvm/
-ninja clang compiler-rt llvm-symbolizer llvm-profdata llvm-cov llvm-config lld
+ninja clang compiler-rt llvm-symbolizer llvm-profdata llvm-cov llvm-config lld llvm-dis
 popd && popd
 pushd evaluation && ./coverage.sh 5 1 && popd # videzzo
 # pushd evaluation && ./coverage.sh 5 0 && popd # qemufuzzer

@@ -29,12 +29,12 @@ def plot(metadata, linestyle, shadowcolor):
 
 # name convention
 # virtfuzz-ehci.csv virtfuzz-m-ehci.csv
-ntools = len(sys.argv) - 1
+ntools = len(sys.argv) - 2
 if ntools == 0:
     printf('[-] there is no data available')
     exit(1)
 metadata = []
-for filename in sys.argv[1:]:
+for filename in sys.argv[1:-1]:
     tool = '-'.join(filename[:-4].split('-')[:-1])
     target = filename[:-4].split('-')[-1]
     metadata.append({'filename': filename, 'tool': tool, 'target': target})
@@ -49,7 +49,22 @@ ax.set_aspect(4.9, adjustable='box')
 
 linestyle = ['-', '--', '-.', ':', '.']
 # shadowcolor = ['0.55', '0.65', '0.75', '0.85', '0.95']
-shadowcolor = ['lightcoral', 'navajowhite', 'lightgreen', 'skyblue', 'plum']
+# shadowcolor = ['lightcoral', 'navajowhite', 'lightgreen', 'skyblue', 'plum']
+colorset = sys.argv[-1]
+if colorset == 'VQN':
+    shadowcolor = ['pink', 'orange', 'cyan']
+elif colorset == 'VQ':
+    shadowcolor = ['pink', 'orange']
+elif colorset == 'VV':
+    shadowcolor = ['pink', 'pink']
+elif colorset == 'VVQQ':
+    shadowcolor = ['pink', 'pink', 'orange', 'orange']
+elif colorset == 'VQV':
+    shadowcolor = ['pink', 'orange', 'lime']
+elif colorset == 'VVVQ':
+    shadowcolor = ['pink', 'pink', 'pink', 'orange']
+else:
+    raise "unknow colorset {}".format(colorset)
 for i, md in enumerate(metadata):
     plot(md, linestyle[i], shadowcolor[i])
 
@@ -58,4 +73,4 @@ plt.axvline(x=10, color='purple', linestyle='dotted')
 if len(metadata) > 4:
     plt.axvline(x=1800, color='purple', linestyle='dotted')
 plt.axvline(x=3600, color='purple', linestyle='dotted')
-plt.savefig('{}.pdf'.format('@'.join(sys.argv[1:])), bbox_inches='tight')
+plt.savefig('{}.pdf'.format('@'.join(sys.argv[1:-1])), bbox_inches='tight')
