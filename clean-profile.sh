@@ -6,7 +6,7 @@ prefix=$2
 
 mkdir /tmp/$dir
 for ROUND in $(seq 0 9); do
-    mv $(ls $prefix-$ROUND-* | tail -n 1) /tmp/$dir
-    rm $prefix-$ROUND-*
+    mv $(ls $prefix$ROUND-* | tail -n 1) /tmp/$dir
+    rm $prefix$ROUND-*
 done
 mv /tmp/$dir/* $dir/
