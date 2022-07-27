@@ -16,7 +16,6 @@ RUN git clone https://gitlab.freedesktop.org/spice/spice.git --depth=1
 RUN cd spice && ./autogen.sh && ./configure --prefix=/usr --sysconfdir=/etc \
 --localstatedir=/var --libdir=/usr/lib && make && make install && cd
 
-RUN python3 -m pip install numpy pandas matplotlib
-
-RUN python3 -m pip install jinja2 msgpack
+RUN python3 -m pip install numpy pandas matplotlib -i https://pypi.douban.com/simple
+RUN python3 -m pip install jinja2 msgpack -i https://pypi.douban.com/simple
 RUN apt-get install -y gcc-8 g++-8 libc6-dev-i386 libisoburn-dev libdevmapper-dev

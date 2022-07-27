@@ -19,7 +19,8 @@ popd
 ### Build llvm-project
 
 ```
-git clone git@github.com:cyruscyliu/virtfuzz-llvm-project.git llvm-project --depth=1
+git clone \
+    git@github.com:cyruscyliu/virtfuzz-llvm-project.git --depth=1
 cp evaluation/run.sh .
 sudo bash run.sh # Enter the container
 pushd llvm-project && mkdir build-custom && pushd build-custom
@@ -32,17 +33,25 @@ popd && popd
 
 ### Build fuzzers
 
-+ ViDeZZo (variants) QEMU 5.1.0
-+ ViDeZZo VirtualBox 6.1.14
-+ VShuttle QEMU 5.1.0 (to be merged)
-+ QEMUFuzzer QEMU 5.1.0 (to be merged)
-+ Nyx QEMU 5.1. (to be merged)
-
 ```
-git clone -b v5.1.0-videzzo \
-    git@github.com:cyruscyliu/virtfuzz-qemu.git qemu-videzzo --depth=1
-pushd qemu && mkdir build-coverage-5 && popd
-VBox
+# ViDeZZo QEMU 5.1.0
+git clone -b v5.1.0-videzzo    --recurse-submodules \
+    git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-videzzo    --depth=1
+# QEMUFuzzer QEMU 5.1.0
+git clone -b v5.1.0-qemufuzzer --recurse-submodules \
+    git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-qemufuzzer --depth=1
+# ViDeZZo VirtualBox 6.1.14
+git clone  \
+    git@github.com:cyruscyliu/virtfuzz-vbox.git virtfuzz-vbox            --depth=1
+# VShuttle QEMU 5.1.0 (to be merged)
+# Nyx QEMU 5.1. (to be merged)
+
+cp evaluation/run.sh .
+sudo bash run.sh # Enter the container
+cd evaluation
+./build-fuzzer.sh videzzo    qemu
+./build-fuzzer.sh videzzo    vbox
+./build-fuzzer.sh qemufuzzer qemu
 ```
 
 ## Benchmark coverage over time
