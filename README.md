@@ -59,10 +59,8 @@ cd evaluation
 + Step 1: run fuzzers
 
 ```
-{videzzo variants} * {qemu, vmm} * {targets}
-bash -x evaluation-01.sh VMM TARGET
-bash -x evaluation-02.sh VMM TARGET # disable intra-message annotation
-bash -x evaluation-03.sh VMM TARGET # disable intra-message annotation but enable fork server
+bash -x evaluation-01.sh VMM TARGET VARIANT
+# Usage $0 qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p
 ```
 
 + Step 2: Generate cov table for each target
