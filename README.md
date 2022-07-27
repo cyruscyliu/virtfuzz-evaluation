@@ -59,32 +59,14 @@ cd evaluation
 + Step 1: run fuzzers
 
 ```
-# ViDeZZo: Usage $0 qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p
-bash -x evaluation-01.sh VMM TARGET VARIANT
+./launch-fuzzer.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p [[RUNS] [TIMEOUT]]
 ```
 
-+ Step 2: Generate cov table for each target
++ Step 2: calculate coverage and performance
 
 ```
-bash -x clangcovreport.sh ../qemu/out-cov/qemu-fuzz-i386 virtfuzz-qemu-ehci-profiles/ virtfuzz-qemu-ehci-reports/
-bash -x covtablegen-new.sh ehci.c reports/cov-profile-virtfuzz-ehci- [0|1] > virtfuzz-ehci.csv
-
-bash -x clangcovreport.sh ../vbox/out-cov/VBoxVideZZo    virtfuzz-vbox-ehci-profiles/ virtfuzz-vbox-ehci-reports/
-bash -x covtablegen-new.sh ehci.c reports/cov-profile-virtfuzz-ehci- [0|1] > virtfuzz-ehci.csv
-```
-
-+ Step 3: Plot branch cov over time
-
-Please look at [replot.sh](./results/replot.sh).
-
-+ Step 4: Calculate overhead if necessary
-
-```
-python3 overhead24cal.py virtfuzz-qemu-uhci-logs/*.log > virtfuzz-qemu-uhci.overhead
-python3 overhead24cal.py virtfuzz-qemu-ohci-logs/*.log > virtfuzz-qemu-ohci.overhead
-python3 overhead24cal.py virtfuzz-qemu-ehci-logs/*.log > virtfuzz-qemu-ehci.overhead
-python3 overhead24cal.py virtfuzz-qemu-xhci-logs/*.log > virtfuzz-qemu-xhci.overhead
-python3 overhead24cal.py virtfuzz-vbox-ohci-logs/*.log > virtfuzz-vbox-ehci.overhead
+./calculate-coverage.sh    videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p
+./calculate-performance.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p
 ```
 
 ### Calculate annotation stats
