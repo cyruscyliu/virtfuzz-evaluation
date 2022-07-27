@@ -17,14 +17,14 @@ if [ $FUZZER == 'videzzo' ]; then
         CC=clang CXX=clang++ ../configure \
             --disable-werror --enable-videzzo --disable-sanitizers \
             --target-list="i386-softmmu x86_64-softmmu arm-softmmu aarch64-softmmu"
-        make CONFIG_FUZZ=y CFLAGS="-DCLANG_COV_DUMP -DVIRTFUZZ_LESS_CRASHES -fsanitize=fuzzer \
-            -fprofile-instr-generate -fcoverage-mapping" CLANG_COV_DUMP=1 -j$(nproc) \
+        make CONFIG_FUZZ=y CFLAGS="-DCLANG_COV_DUMP -DVIDEZZO_LESS_CRASHES -fsanitize=fuzzer \
+            -fprofile-instr-generate -fcoverage-mapping" -j$(nproc) \
             i386-softmmu/videzzo x86_64-softmmu/videzzo arm-softmmu/videzzo aarch64-softmmu/videzzo
         cp i386-softmmu/qemu-videzzo-i386 .
         cp x86_64-softmmu/qemu-videzzo-x86_64 .
         cp arm-softmmu/qemu-videzzo-arm .
         cp aarch64-softmmu/qemu-videzzo-aarch64 .
-        pushd $OLDPWD
+        popd
     elif [ $VMM == 'vbox' ]; then
 	# modified from ../videzzo/videzzo_vbox/0005-compile-vbox-cov.sh
 	pushd ../vbox

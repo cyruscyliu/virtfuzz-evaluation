@@ -59,8 +59,8 @@ cd evaluation
 + Step 1: run fuzzers
 
 ```
+# ViDeZZo: Usage $0 qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p
 bash -x evaluation-01.sh VMM TARGET VARIANT
-# Usage $0 qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p
 ```
 
 + Step 2: Generate cov table for each target
