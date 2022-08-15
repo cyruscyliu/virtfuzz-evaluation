@@ -45,7 +45,7 @@ git clone  \
     git@github.com:cyruscyliu/virtfuzz-vbox.git virtfuzz-vbox            --depth=1
 # VShuttle QEMU 5.1.0
 git clone -b v5.1.0-vshuttle   --recurse-submodules \
-    git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-vsuttle    --depth=1
+    git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-vshuttle   --depth=1
 git clone \
     git@github.com:cyruscyliu/v-shuttle.git v-shuttle                    --depth=1
 # Nyx QEMU 5.1. (to be merged)
