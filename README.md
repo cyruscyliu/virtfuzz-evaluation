@@ -43,7 +43,11 @@ git clone -b v5.1.0-qemufuzzer --recurse-submodules \
 # ViDeZZo VirtualBox 6.1.14
 git clone  \
     git@github.com:cyruscyliu/virtfuzz-vbox.git virtfuzz-vbox            --depth=1
-# VShuttle QEMU 5.1.0 (to be merged)
+# VShuttle QEMU 5.1.0
+git clone -b v5.1.0-vshuttle   --recurse-submodules \
+    git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-vsuttle    --depth=1
+git clone \
+    git@github.com:cyruscyliu/v-shuttle.git v-shuttle                    --depth=1
 # Nyx QEMU 5.1. (to be merged)
 
 cp evaluation/run.sh .
@@ -52,6 +56,7 @@ cd evaluation
 ./build-fuzzer.sh videzzo    qemu
 ./build-fuzzer.sh videzzo    vbox
 ./build-fuzzer.sh qemufuzzer qemu
+./build-fuzzer.sh vshuttle   qemu
 ```
 
 ## Benchmark coverage over time
@@ -60,6 +65,7 @@ cd evaluation
 
 ```
 ./launch-fuzzer.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p [[RUNS] [TIMEOUT]]
+./launch-fuzzer.sh vshuttle qemu ohci none [[RUNS] [TIMEOUT]]
 ```
 
 + Step 2: calculate coverage and performance

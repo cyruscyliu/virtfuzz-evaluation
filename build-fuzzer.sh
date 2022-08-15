@@ -10,6 +10,42 @@ if [ -z $FUZZER ] | [ -z $VMM ]; then
     exit 1
 fi
 
+function build_vshuttle_qemu() {
+    target=$1 # ohci/ehci/uhci
+
+    # prepare QEMU
+    QEMU_DIR=qemu-5.1.0-$target
+    rm -rf $QEMU_DIR
+    # assume we are in v-shuttle/V-Shuttle-S
+    cp ../../qemu-vshuttle $QEMU_DIR
+
+    # compile afl-seedpool
+    pushd afl-seedpool
+    make
+    make install
+    popd
+
+    # copy files
+    cp ./fuzz-seedpool.h $QEMU_DIR/include
+    cp ./hook-write.h $QEMU_DIR/include
+    cp ./03-clangcovdump.h $QEMU_DIR/include/clangcovdump.h
+    patch $QEMU_DIR/softmmu/memory.c ./QEMU-patch/memory.patch
+
+    # patch QEMU
+    if [ $target == 'uhci'  ]; then
+        patch $QEMU_DIR/hw/usb/hcd-uhci.c ./QEMU-patch/hcd-uhci.patch
+    elif [ $target == 'ohci'  ]; then
+        patch $QEMU_DIR/hw/usb/hcd-ohci.c ./QEMU-patch/hcd-ohci.patch
+    elif [ $target == 'ehci'  ]; then
+        patch $QEMU_DIR/hw/usb/hcd-ehci.c ./QEMU-patch/hcd-ehci.patch
+    fi
+
+    # compile QEMU
+    pushd $QEMU_DIR
+    CC=afl-clang CXX=afl-clang++ ./configure --disable-werror --disable-sanitizers --target-list="x86_64-softmmu"
+    make CFLAGS="-DCLANG_COV_DUMP -DVIDEZZO_LESS_CRASHES -fprofile-instr-generate -fcoverage-mapping" -j$(nproc) x86_64-softmmu/all
+}
+
 if [ $FUZZER == 'videzzo' ]; then
     if [ $VMM == 'qemu' ]; then
         mkdir -p ../qemu-videzzo/out-cov
@@ -61,7 +97,9 @@ elif [ $FUZZER == 'qemufuzzer' ]; then
         --disable-werror --disable-sanitizers \
         --target-list="i386-softmmu arm-softmmu aarch64-softmmu"
 elif [ $FUZZER == 'vshuttle' ]; then
-    echo "[-] Not supported"
+    pushd ../v-shuttle/V-Shuttle-S
+    build_vshuttle_qemu ohci
+    popd
 elif [ $FUZZER == 'nyx' ]; then
     echo "[-] Not supported"
 else
