@@ -47,26 +47,21 @@ ax.set_xlim(0.9, 86400)
 ax.yaxis.set_major_formatter(mtick.PercentFormatter(1))
 ax.set_aspect(4.9, adjustable='box')
 
-linestyle = ['-', '--', '-.', ':', '.']
 # shadowcolor = ['0.55', '0.65', '0.75', '0.85', '0.95']
 # shadowcolor = ['lightcoral', 'navajowhite', 'lightgreen', 'skyblue', 'plum']
 colorset = sys.argv[-1]
-if colorset == 'VQN':
-    shadowcolor = ['pink', 'orange', 'cyan']
-elif colorset == 'VQ':
-    shadowcolor = ['pink', 'orange']
-elif colorset == 'VV':
-    shadowcolor = ['pink', 'pink']
-elif colorset == 'VVQQ':
-    shadowcolor = ['pink', 'pink', 'orange', 'orange']
-elif colorset == 'VQV':
-    shadowcolor = ['pink', 'orange', 'lime']
-elif colorset == 'VVVQ':
-    shadowcolor = ['pink', 'pink', 'pink', 'orange']
-else:
+shadowcolor = []
+for indicator in colorset:
+    if indicator == 'V':
+        shadowcolor.append('pink')
+    elif indicator == 'Q':
+        shadowcolor.append('orange')
+    elif indicator == 'N':
+        shadowcolor.append('cyan')
+if len(shadowcolor) == 0:
     raise "unknow colorset {}".format(colorset)
 for i, md in enumerate(metadata):
-    plot(md, linestyle[i], shadowcolor[i])
+    plot(md, '-', shadowcolor[i])
 
 plt.xticks([10, 60, 600, 3600, 86400], ['10s', '1m', '10m', '1h', '24h'])
 plt.axvline(x=10, color='purple', linestyle='dotted')
