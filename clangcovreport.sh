@@ -6,7 +6,7 @@ REPORTS=$3
 
 rm /tmp/clangcovreport-*.sh
 rm /tmp/*.profdata
-profiles=$(find $2 -name profile* -type f)
+profiles=$(find $2 -name profile\* -type f)
 mkdir -p $REPORTS
 cp $BINARY $REPORTS
 for profraw in $profiles; do
