@@ -7,7 +7,7 @@ VARIANT=$4 # arp, ar, rp, ap, a, r, p
 RUNS=$5
 TIMEOUT=$6
 
-usage="Usage $0 videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p [[RUNS] [TIMEOUT]]"
+usage="Usage $0 videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none [[RUNS] [TIMEOUT]]"
 
 if [ -z ${FUZZER} ] || [ -z ${VMM} ] || [ -z ${TARGET} ] || [ -z ${VARIANT} ]; then
     echo ${usage}
@@ -65,7 +65,7 @@ elif [ ${VARIANT} == 'r' ]; then
 elif [ ${VARIANT} == 'p' ]; then
     FLAGS="export VIDEZZO_DISABLE_INTRA_MESSAGE_ANNOTATION=1; export VIDEZZO_DISABLE_INTER_MESSAGE_MUTATORS=1"
 elif [ ${VARIANT} == 'none' ]; then
-    FLAGS=
+    FLAGS="export VIDEZZO_DISABLE_INTRA_MESSAGE_ANNOTATION=1; export VIDEZZO_DISABLE_INTER_MESSAGE_MUTATORS=1; export VIDEZZO_FORK=1"
 else
     echo ${usage}
     exit 1

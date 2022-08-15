@@ -64,7 +64,7 @@ cd evaluation
 + Step 1: run fuzzers
 
 ```
-./launch-fuzzer.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p [[RUNS] [TIMEOUT]]
+./launch-fuzzer.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none [[RUNS] [TIMEOUT]]
 ./launch-fuzzer.sh vshuttle qemu ohci none [[RUNS] [TIMEOUT]]
 ```
 
