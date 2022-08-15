@@ -4,8 +4,10 @@ docker run --rm \
     -v $PWD/virtfuzz-llvm-project:/root/llvm-project \
     -v $PWD/virtfuzz-qemu-videzzo:/root/qemu-videzzo \
     -v $PWD/virtfuzz-qemu-qemufuzzer:/root/qemu-qemufuzzer \
+    -v $PWD/virtfuzz-qemu-vshuttle:/root/qemu-vshuttle\
     -v $PWD/virtfuzz-vbox:/root/vbox \
     -v $PWD/videzzo:/root/videzzo \
+    -v $PWD/v-shuttle:/root/v-shuttle \
     -v /usr/src:/usr/src \
     -v /dev:/dev \
     -v /lib/modules:/lib/modules \

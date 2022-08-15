@@ -71,7 +71,7 @@ cd evaluation
 + Step 2: calculate coverage and performance
 
 ```
-./calculate-coverage.sh    videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none
+./calculate-coverage.sh    videzzo|qemufuzzer|vshuttle qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none
 ./calculate-performance.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none
 ```
 

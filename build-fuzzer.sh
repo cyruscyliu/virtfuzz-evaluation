@@ -13,31 +13,32 @@ fi
 function build_vshuttle_qemu() {
     target=$1 # ohci/ehci/uhci
 
-    # prepare QEMU
-    QEMU_DIR=qemu-5.1.0-$target
-    rm -rf $QEMU_DIR
-    # assume we are in v-shuttle/V-Shuttle-S
-    cp ../../qemu-vshuttle $QEMU_DIR
-
     # compile afl-seedpool
     pushd afl-seedpool
     make
     make install
     popd
 
-    # copy files
-    cp ./fuzz-seedpool.h $QEMU_DIR/include
-    cp ./hook-write.h $QEMU_DIR/include
-    cp ./03-clangcovdump.h $QEMU_DIR/include/clangcovdump.h
-    patch $QEMU_DIR/softmmu/memory.c ./QEMU-patch/memory.patch
+    # prepare QEMU
+    QEMU_DIR=qemu-5.1.0-$target
+    if [ ! -d $QEMU_DIR ]; then
+        # assume we are in v-shuttle/V-Shuttle-S
+        cp -r ../../qemu-vshuttle $QEMU_DIR
 
-    # patch QEMU
-    if [ $target == 'uhci'  ]; then
-        patch $QEMU_DIR/hw/usb/hcd-uhci.c ./QEMU-patch/hcd-uhci.patch
-    elif [ $target == 'ohci'  ]; then
-        patch $QEMU_DIR/hw/usb/hcd-ohci.c ./QEMU-patch/hcd-ohci.patch
-    elif [ $target == 'ehci'  ]; then
-        patch $QEMU_DIR/hw/usb/hcd-ehci.c ./QEMU-patch/hcd-ehci.patch
+        # copy files
+        cp ./fuzz-seedpool.h $QEMU_DIR/include
+        cp ./hook-write.h $QEMU_DIR/include
+        cp ./03-clangcovdump.h $QEMU_DIR/include/clangcovdump.h
+        patch $QEMU_DIR/softmmu/memory.c ./QEMU-patch/memory.patch
+
+        # patch QEMU
+        if [ $target == 'uhci'  ]; then
+            patch $QEMU_DIR/hw/usb/hcd-uhci.c ./QEMU-patch/hcd-uhci.patch
+        elif [ $target == 'ohci'  ]; then
+            patch $QEMU_DIR/hw/usb/hcd-ohci.c ./QEMU-patch/hcd-ohci.patch
+        elif [ $target == 'ehci'  ]; then
+            patch $QEMU_DIR/hw/usb/hcd-ehci.c ./QEMU-patch/hcd-ehci.patch
+        fi
     fi
 
     # compile QEMU

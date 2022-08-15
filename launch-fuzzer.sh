@@ -7,7 +7,7 @@ VARIANT=$4 # arp, ar, rp, ap, a, r, p
 RUNS=$5
 TIMEOUT=$6
 
-usage="Usage $0 videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none [[RUNS] [TIMEOUT]]"
+usage="Usage $0 videzzo|qemufuzzer|vshuttle qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none [[RUNS] [TIMEOUT]]"
 
 if [ -z ${FUZZER} ] || [ -z ${VMM} ] || [ -z ${TARGET} ] || [ -z ${VARIANT} ]; then
     echo ${usage}
@@ -43,7 +43,7 @@ elif [ ${FUZZER} == 'qemufuzzer' ]; then
     fi
 elif [ ${FUZZER} == 'vshuttle' ]; then
     if [ ${VMM} == 'qemu' ]; then
-        BIN=02-fuzz.sh
+        BIN=$PWD/02-fuzz-non-local.sh
     else
         echo ${usage}
         exit 1
@@ -84,8 +84,10 @@ for ROUND in $(seq 0 ${RUNS}); do
         LLVM_PROFILE_FILE=profile-$SIG-$ROUND \
         cpulimit -l 100 -- $BIN --fuzz-target=generic-fuzz-$TARGET -max_total_time=${TIMEOUT} >$SIG-$ROUND.log 2>&1
     elif [ ${FUZZER} == 'vshuttle' ]; then
+        echo core >/proc/sys/kernel/core_pattern
+        cd /sys/devices/system/cpu && echo performance | tee cpu*/cpufreq/scaling_governor && cd -
         LLVM_PROFILE_FILE=profile-$SIG-$ROUND \
-        cpulimit -l 100 -- bash -x $BIN $TARGET $ROUND >$SIG-$ROUND.log 2>&1
+        timeout -s KILL $TIMEOUT cpulimit -l 100 -- bash -x $BIN $TARGET $ROUND               >$SIG-$ROUND.log 2>&1
     else
         echo ${usage}
         exit 1

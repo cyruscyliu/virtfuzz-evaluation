@@ -58,6 +58,8 @@ for indicator in colorset:
         shadowcolor.append('orange')
     elif indicator == 'N':
         shadowcolor.append('cyan')
+    elif indicator == 'S':
+        shadowcolor.append('plum')
 if len(shadowcolor) == 0:
     raise "unknow colorset {}".format(colorset)
 for i, md in enumerate(metadata):
