@@ -71,8 +71,8 @@ cd evaluation
 + Step 2: calculate coverage and performance
 
 ```
-./calculate-coverage.sh    videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p
-./calculate-performance.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p
+./calculate-coverage.sh    videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none
+./calculate-performance.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none
 ```
 
 ### Calculate annotation stats
