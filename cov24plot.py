@@ -29,14 +29,14 @@ def plot(metadata, linestyle, shadowcolor):
     plt.legend(loc='upper left', fontsize='x-small')
 
 # name convention
-# videzzo-qemu-ehci-arp.csv 
+# videzzo-qemu-ehci-arp.csv
 ntools = len(sys.argv) - 2
 if ntools == 0:
     printf('[-] there is no data available')
     exit(1)
 metadata = []
 for filename in sys.argv[1:-1]:
-    fuzzer, vmm, target, variant = '-'.join(filename[:-4].split('-')
+    fuzzer, vmm, target, variant = filename[:-4].split('-')
     metadata.append({'filename': filename, 'fuzzer': fuzzer, 'target': target, 'vmm': vmm, 'variant': variant})
 
 fig, ax = plt.subplots()
