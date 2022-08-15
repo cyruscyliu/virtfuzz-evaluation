@@ -93,9 +93,17 @@ if [ $FUZZER == 'videzzo' ]; then
         echo "Usage: $0 FUZZER VMM"
     fi
 elif [ $FUZZER == 'qemufuzzer' ]; then
-    CLANG_COV_DUMP=1 CC=clang-10 CXX=clang++-10 ../configure \
-        --disable-werror --disable-sanitizers \
-        --target-list="i386-softmmu arm-softmmu aarch64-softmmu"
+    mkdir -p ../qemu-qemufuzzer/out-cov
+    pushd ../qemu-qemufuzzer/out-cov
+    CC=clang CXX=clang++ ../configure \
+        --disable-werror --enable-fuzzing --disable-sanitizers \
+        --target-list="i386-softmmu arm-softmmu"
+    make CONFIG_FUZZ=y CFLAGS="-DCLANG_COV_DUMP -DVIDEZZO_LESS_CRASHES -fsanitize=fuzzer \
+        -fprofile-instr-generate -fcoverage-mapping" -j$(nproc) \
+        i386-softmmu/fuzz arm-softmmu/fuzz
+    cp i386-softmmu/qemu-fuzz-i386 .
+    cp arm-softmmu/qemu-fuzz-arm .
+    popd
 elif [ $FUZZER == 'vshuttle' ]; then
     pushd ../v-shuttle/V-Shuttle-S
     build_vshuttle_qemu ohci

@@ -82,7 +82,7 @@ for ROUND in $(seq 0 ${RUNS}); do
         cpulimit -l 100 -- $BIN --fuzz-target=videzzo-fuzz-$TARGET -max_total_time=${TIMEOUT} >$SIG-$ROUND.log 2>&1
     elif [ ${FUZZER} == 'qemufuzzer' ]; then
         LLVM_PROFILE_FILE=profile-$SIG-$ROUND \
-        cpulimit -l 100 -- $BIN --fuzz-target=generic-fuzz-$TARGET -max_total_time=${TIMEOUT}>$SIG-$ROUND.log 2>&1
+        cpulimit -l 100 -- $BIN --fuzz-target=generic-fuzz-$TARGET -max_total_time=${TIMEOUT} >$SIG-$ROUND.log 2>&1
     elif [ ${FUZZER} == 'vshuttle' ]; then
         LLVM_PROFILE_FILE=profile-$SIG-$ROUND \
         cpulimit -l 100 -- bash -x $BIN $TARGET $ROUND >$SIG-$ROUND.log 2>&1

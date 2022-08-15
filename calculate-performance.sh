@@ -5,7 +5,7 @@ VMM=$2 # qemu|vbox
 TARGET=$3 # uhci|ohci|ehci|xhci
 VARIANT=$4 # arp, ar, rp, ap, a, r, p
 
-usage='Usage: $0 videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p'
+usage='Usage: $0 videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none'
 
 if [ -z $FUZZER ] || [ -z $VMM ] || [ -z $TARGET ] || [ -z $VARIANT ]; then
     echo ${usage}
