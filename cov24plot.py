@@ -88,7 +88,6 @@ for i, md in enumerate(metadata):
 
 plt.xticks([10, 60, 600, 3600, 86400], ['10s', '1m', '10m', '1h', '24h'])
 plt.axvline(x=10, color='purple', linestyle='dotted')
-if len(metadata) > 4:
-    plt.axvline(x=1800, color='purple', linestyle='dotted')
 plt.axvline(x=3600, color='purple', linestyle='dotted')
+plt.axvline(x=43200, color='purple', linestyle='dotted')
 plt.savefig('{}.pdf'.format('@'.join(sys.argv[1:-1])), bbox_inches='tight')
