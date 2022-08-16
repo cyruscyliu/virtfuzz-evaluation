@@ -86,6 +86,10 @@ for ROUND in $(seq 0 ${RUNS}); do
     elif [ ${FUZZER} == 'vshuttle' ]; then
         echo core >/proc/sys/kernel/core_pattern
         cd /sys/devices/system/cpu && echo performance | tee cpu*/cpufreq/scaling_governor && cd -
+        pushd ../v-shuttle/V-Shuttle-S/ && pushd afl-seedpool
+        make
+        make install
+        popd && popd
         LLVM_PROFILE_FILE=profile-$SIG-$ROUND \
         timeout -s KILL $TIMEOUT cpulimit -l 100 -- bash -x $BIN $TARGET $ROUND               >$SIG-$ROUND.log 2>&1
     else
