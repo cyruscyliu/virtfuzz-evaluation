@@ -19,3 +19,5 @@ RUN cd spice && ./autogen.sh && ./configure --prefix=/usr --sysconfdir=/etc \
 RUN python3 -m pip install numpy pandas matplotlib -i https://pypi.douban.com/simple
 RUN python3 -m pip install jinja2 msgpack -i https://pypi.douban.com/simple
 RUN apt-get install -y gcc-8 g++-8 libc6-dev-i386 libisoburn-dev libdevmapper-dev
+
+RUN git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime && bash ~/.vim_runtime/install_awesome_vimrc.sh
