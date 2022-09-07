@@ -105,12 +105,21 @@ elif [ $FUZZER == 'qemufuzzer' ]; then
     cp i386-softmmu/qemu-fuzz-i386 .
     cp arm-softmmu/qemu-fuzz-arm .
     popd
+elif [ $FUZZER == 'nyx' ]; then
+     mkdir -p ../qemu-nyx/out-cov
+    pushd ../qemu-nyx/out-cov
+    CC=clang CXX=clang++ ../configure \
+        --disable-werror --disable-sanitizers \
+        --target-list="x86_64-softmmu"
+    make CFLAGS="-DVIDEZZO_LESS_CRASHES \
+        -fprofile-instr-generate -fcoverage-mapping" -j$(nproc) \
+        x86_64-softmmu/all
+    cp x86_64-softmmu/qemu-system-x86_64 .
+    popd
 elif [ $FUZZER == 'vshuttle' ]; then
     pushd ../v-shuttle/V-Shuttle-S
     build_vshuttle_qemu ohci
     popd
-elif [ $FUZZER == 'nyx' ]; then
-    echo "[-] Not supported"
 else
     echo "[-] Usage: $0 FUZZER VMM"
 fi
