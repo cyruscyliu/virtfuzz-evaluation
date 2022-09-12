@@ -13,12 +13,6 @@ fi
 function build_vshuttle_qemu() {
     target=$1 # ohci/ehci/uhci
 
-    # compile afl-seedpool
-    pushd afl-seedpool
-    make
-    make install
-    popd
-
     # prepare QEMU
     QEMU_DIR=qemu-5.1.0-$target
     if [ ! -d $QEMU_DIR ]; then
@@ -45,6 +39,7 @@ function build_vshuttle_qemu() {
     pushd $QEMU_DIR
     CC=afl-clang CXX=afl-clang++ ./configure --disable-werror --disable-sanitizers --target-list="x86_64-softmmu"
     make CFLAGS="-DCLANG_COV_DUMP -DVIDEZZO_LESS_CRASHES -fprofile-instr-generate -fcoverage-mapping" -j$(nproc) x86_64-softmmu/all
+    popd
 }
 
 if [ $FUZZER == 'videzzo' ]; then
@@ -118,7 +113,17 @@ elif [ $FUZZER == 'nyx' ]; then
     popd
 elif [ $FUZZER == 'vshuttle' ]; then
     pushd ../v-shuttle/V-Shuttle-S
+    # compile afl-seedpool
+    pushd afl-seedpool
+    make
+    pushd llvm_mode/
+    make
+    popd
+    make install
+    popd
     build_vshuttle_qemu ohci
+    build_vshuttle_qemu uhci
+    build_vshuttle_qemu ehci
     popd
 else
     echo "[-] Usage: $0 FUZZER VMM"
