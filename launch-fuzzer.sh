@@ -90,7 +90,9 @@ for ROUND in $(seq ${START} ${RUNS}); do
         cpulimit -l 100 -- $BIN --fuzz-target=generic-fuzz-$TARGET -max_total_time=${TIMEOUT} >$SIG-$ROUND.log 2>&1
     elif [ ${FUZZER} == 'vshuttle' ]; then
         echo core >/proc/sys/kernel/core_pattern
-        cd /sys/devices/system/cpu && echo performance | tee cpu*/cpufreq/scaling_governor && cd -
+        pushd /sys/devices/system/cpu
+        echo performance | tee cpu*/cpufreq/scaling_governor
+        popd
         pushd ../v-shuttle/V-Shuttle-S/ && pushd afl-seedpool
         make
         make install
