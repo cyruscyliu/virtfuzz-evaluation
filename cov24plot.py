@@ -15,7 +15,7 @@ def plot(metadata, linestyle, marker, color, shadowcolor, ignore_variant=True):
         '-intel', '').replace('-cirrus', '').replace('nyx', 'NYX').replace('qtest', 'QEMUFuzzer')
     if not ignore_variant and metadata['variant'] != 'none':
         label += '-'
-        label += metadata['variant']
+        label += metadata['variant'].upper()
     if metadata['target'] == 'ati':
         label += ' (ati)'
     elif metadata['target'] == 'ati2d':
@@ -62,13 +62,17 @@ markers = []
 colors = []
 linestyles = []
 
+ignore_variant = True
 for idx, indicator in enumerate(indicators):
     if indicator == 'V':
         # colors.append('#9CCB86')
         colors.append('#0f0f0f')
         shadowcolor.append('#9CCB86')
-        # markers.append(videzzo_markers[idx % len(videzzo_markers)])
-        markers.append(None)
+        if '-' in linestyles:
+            ignore_variant = False
+            markers.append(videzzo_markers[idx % len(videzzo_markers)])
+        else:
+            markers.append(None)
         linestyles.append('-')
     elif indicator == 'Q':
         # colors.append('#E9E29C')
@@ -94,7 +98,7 @@ for idx, indicator in enumerate(indicators):
 if len(shadowcolor) == 0:
     raise "unknow colorset {}".format(colorset)
 for i, md in enumerate(metadata):
-    plot(md, linestyles[i], markers[i], colors[i], shadowcolor[i])
+    plot(md, linestyles[i], markers[i], colors[i], shadowcolor[i], ignore_variant=ignore_variant)
 
 plt.xticks([10, 60, 600, 3600, 86400], ['10s', '1m', '10m', '1h', '24h'])
 plt.axvline(x=10, color='purple', linestyle='dotted')
