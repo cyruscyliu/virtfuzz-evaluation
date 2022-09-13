@@ -3,9 +3,9 @@ import sys
 
 target_dir = sys.argv[1]
 
-profiles = os.listdir(target_dir)
+profiles = sorted(os.listdir(target_dir))
 
-sampled_seeds = [i for i in range(0, len(profiles), 20)]
+sampled_seeds = [i for i in range(0, len(profiles), 10)]
 sampled_seeds.append(len(profiles) - 1)
 
 sampled_profiles = []
