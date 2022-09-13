@@ -37,18 +37,26 @@ popd && popd
 # ViDeZZo QEMU 5.1.0
 git clone -b v5.1.0-videzzo    --recurse-submodules \
     git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-videzzo    --depth=1
+
 # QEMUFuzzer QEMU 5.1.0
 git clone -b v5.1.0-qemufuzzer --recurse-submodules \
     git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-qemufuzzer --depth=1
+
 # ViDeZZo VirtualBox 6.1.14
 git clone  \
     git@github.com:cyruscyliu/virtfuzz-vbox.git virtfuzz-vbox            --depth=1
+
 # VShuttle QEMU 5.1.0
 git clone -b v5.1.0-vshuttle   --recurse-submodules \
     git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-vshuttle   --depth=1
 git clone \
     git@github.com:cyruscyliu/v-shuttle.git v-shuttle                    --depth=1
-# Nyx QEMU 5.1. (to be merged)
+
+# Nyx QEMU 5.1.0
+git clone -b v5.1.0-nyx        --recurse-submodules \
+    git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-nyx        --depth=2
+git clone \
+    git@github.com:cyruscyliu/Nyx.git Nyx                                --depth=1
 
 cp evaluation/run.sh .
 sudo bash run.sh # Enter the container
@@ -57,11 +65,12 @@ cd evaluation
 ./build-fuzzer.sh videzzo    vbox
 ./build-fuzzer.sh qemufuzzer qemu
 ./build-fuzzer.sh vshuttle   qemu
+./build-fuzzer.sh nyx        qemu # only for coverage profiling
 ```
 
 ## Benchmark coverage over time
 
-+ Step 1: run fuzzers
++ Step 1: run fuzzers (for nyx, please check its README)
 
 ```
 ./launch-fuzzer.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none [[RUNS] [TIMEOUT]]
@@ -71,7 +80,7 @@ cd evaluation
 + Step 2: calculate coverage and performance
 
 ```
-./calculate-coverage.sh    videzzo|qemufuzzer|vshuttle qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none
+./calculate-coverage.sh    videzzo|qemufuzzer|vshuttle|nyx qemu|vbox uhci|ohci|ehci|xhci|qemu_xhci arp|ar|rp|ap|a|r|p|none
 ./calculate-performance.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none
 ```
 
