@@ -6,8 +6,9 @@ TARGET=$3 # uhci|ohci|ehci|xhci
 VARIANT=$4 # arp, ar, rp, ap, a, r, p
 RUNS=$5
 TIMEOUT=$6
+START=$7
 
-usage="Usage $0 videzzo|qemufuzzer|vshuttle qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none [[RUNS] [TIMEOUT]]"
+usage="Usage $0 videzzo|qemufuzzer|vshuttle qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none [[[[RUNS] [TIMEOUT]] [START]]]"
 
 if [ -z ${FUZZER} ] || [ -z ${VMM} ] || [ -z ${TARGET} ] || [ -z ${VARIANT} ]; then
     echo ${usage}
@@ -21,6 +22,10 @@ RUNS=$((${RUNS} - 1))
 
 if [ -z ${TIMEOUT} ]; then
     TIMEOUT=86400
+fi
+
+if [ -z ${START} ]; then
+    START=0
 fi
 
 export UBSAN_OPTIONS=symbolize=1:halt_on_error=0:print_stacktrace=1
@@ -75,7 +80,7 @@ SIG=$FUZZER-$VMM-$TARGET-$VARIANT
 
 export UBSAN_OPTIONS=symbolize=1:halt_on_error=0:print_stacktrace=1
 
-for ROUND in $(seq 0 ${RUNS}); do
+for ROUND in $(seq ${START} ${RUNS}); do
     if [ ${FUZZER} == 'videzzo' ]; then
         ${FLAGS}; \
         LLVM_PROFILE_FILE=profile-$SIG-$ROUND \
@@ -85,7 +90,9 @@ for ROUND in $(seq 0 ${RUNS}); do
         cpulimit -l 100 -- $BIN --fuzz-target=generic-fuzz-$TARGET -max_total_time=${TIMEOUT} >$SIG-$ROUND.log 2>&1
     elif [ ${FUZZER} == 'vshuttle' ]; then
         echo core >/proc/sys/kernel/core_pattern
-        cd /sys/devices/system/cpu && echo performance | tee cpu*/cpufreq/scaling_governor && cd -
+        pushd /sys/devices/system/cpu
+        echo performance | tee cpu*/cpufreq/scaling_governor
+        popd
         pushd ../v-shuttle/V-Shuttle-S/ && pushd afl-seedpool
         make
         make install

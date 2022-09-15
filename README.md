@@ -53,8 +53,8 @@ git clone \
     git@github.com:cyruscyliu/v-shuttle.git v-shuttle                    --depth=1
 
 # Nyx QEMU 5.1.0
-git clone -b v5.1.0-nyx        -recurse-submodules \
-    git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-nyx        --depth=1
+git clone -b v5.1.0-nyx        --recurse-submodules \
+    git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-nyx        --depth=2
 git clone \
     git@github.com:cyruscyliu/Nyx.git Nyx                                --depth=1
 

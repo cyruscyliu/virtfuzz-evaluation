@@ -6,16 +6,16 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 plt.rcParams.update({'font.size': 24})
 
-def plot(metadata, linestyle, marker, color, shadowcolor):
+def plot(metadata, linestyle, marker, color, shadowcolor, ignore_variant=True):
     filename = metadata['filename']
     data = pd.read_csv(filename)
     data['timestamp'] -= data['timestamp'][0]
     label = metadata['fuzzer'].replace('videzzo', 'ViDeZZo').replace(
         'qemufuzzer', 'QEMUFuzzer').replace('vshuttle', 'V-Shuttle-S').replace(
-        '-intel', '').replace('-cirrus', '').replace('nyx', 'NYX')
-    if metadata['variant'] != 'none':
+        '-intel', '').replace('-cirrus', '').replace('nyx', 'NYX').replace('qtest', 'QEMUFuzzer')
+    if not ignore_variant and metadata['variant'] != 'none':
         label += '-'
-        label += metadata['variant']
+        label += metadata['variant'].upper()
     if metadata['target'] == 'ati':
         label += ' (ati)'
     elif metadata['target'] == 'ati2d':
@@ -29,9 +29,8 @@ def plot(metadata, linestyle, marker, color, shadowcolor):
              linestyle, linewidth=1,
              color=color, label=label,
              marker=marker, markersize=3)
-    plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.8)
-    plt.legend(loc='center left', fontsize=8,
-               bbox_to_anchor=(1.04, 0.5), fancybox=True, ncol=1)
+    plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.6)
+    plt.legend(loc='lower right', fontsize=12, ncol=1)
 
 # name convention
 # videzzo-qemu-ehci-arp.csv
@@ -52,9 +51,6 @@ ax.set_xlim(0.9, 86400)
 ax.yaxis.set_major_formatter(mtick.PercentFormatter(1))
 ax.set_aspect(4.9, adjustable='box')
 
-# shadowcolor = ['0.55', '0.65', '0.75', '0.85', '0.95']
-# shadowcolor = ['lightcoral', 'navajowhite', 'lightgreen', 'skyblue', 'plum']
-
 videzzo_markers = ['o', 'v', '1', '8']
 qemufuzzer_markers = ['p']
 vshuttle_markers = ['s']
@@ -64,27 +60,45 @@ indicators = sys.argv[-1]
 shadowcolor = []
 markers = []
 colors = []
+linestyles = []
+
+ignore_variant = True
 for idx, indicator in enumerate(indicators):
     if indicator == 'V':
-        colors.append('red')
-        shadowcolor.append('pink')
-        markers.append(videzzo_markers[idx % len(videzzo_markers)])
+        # colors.append('#9CCB86')
+        colors.append('#0f0f0f')
+        shadowcolor.append('#9CCB86')
+        if '-' in linestyles:
+            ignore_variant = False
+            markers.append(videzzo_markers[idx % len(videzzo_markers)])
+        else:
+            markers.append(None)
+        linestyles.append('-')
     elif indicator == 'Q':
-        colors.append('orange')
-        shadowcolor.append('peachpuff')
-        markers.append(qemufuzzer_markers[idx % len(qemufuzzer_markers)])
+        # colors.append('#E9E29C')
+        colors.append('#0f0f0f')
+        shadowcolor.append('#E9E29C')
+        # markers.append(qemufuzzer_markers[idx % len(qemufuzzer_markers)])
+        markers.append(None)
+        linestyles.append('--')
     elif indicator == 'N':
-        colors.append('blue')
-        shadowcolor.append('cyan')
-        markers.append(nyx_markder[idx % len(nyx_markder)])
+        # colors.append('#E88472')
+        colors.append('#0f0f0f')
+        shadowcolor.append('#E88472')
+        # markers.append(nyx_markder[idx % len(nyx_markder)])
+        markers.append(None)
+        linestyles.append(':')
     elif indicator == 'S':
-        colors.append('green')
-        shadowcolor.append('lightgreen')
-        markers.append(vshuttle_markers[idx % len(vshuttle_markers)])
+        # colors.append('#EEB479')
+        colors.append('#0f0f0f')
+        shadowcolor.append('#EEB479')
+        # markers.append(vshuttle_markers[idx % len(vshuttle_markers)])
+        markers.append(None)
+        linestyles.append('-.')
 if len(shadowcolor) == 0:
     raise "unknow colorset {}".format(colorset)
 for i, md in enumerate(metadata):
-    plot(md, '-', markers[i], colors[i], shadowcolor[i])
+    plot(md, linestyles[i], markers[i], colors[i], shadowcolor[i], ignore_variant=ignore_variant)
 
 plt.xticks([10, 60, 600, 3600, 86400], ['10s', '1m', '10m', '1h', '24h'])
 plt.axvline(x=10, color='purple', linestyle='dotted')
