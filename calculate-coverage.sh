@@ -24,6 +24,8 @@ fi
 # step 2: generate coverage reports
 if [ $FUZZER == 'videzzo' ]; then
     BIN=../qemu-videzzo/out-cov/qemu-videzzo-i386
+elif [ $FUZZER == 'videzzo++' ]; then
+    BIN=../qemu-videzzo/out-cov/qemu-videzzo-i386
 elif [ $FUZZER == 'qemufuzzer' ]; then
     BIN=../qemu-qemufuzzer/out-cov/qemu-fuzz-i386
 elif [ $FUZZER == 'nyx' ]; then

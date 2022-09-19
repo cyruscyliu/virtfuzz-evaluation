@@ -34,7 +34,7 @@ popd && popd
 ### Build fuzzers
 
 ```
-# ViDeZZo QEMU 5.1.0
+# ViDeZZo/ViDeZZo++ QEMU 5.1.0
 git clone -b v5.1.0-videzzo    --recurse-submodules \
     git@github.com:cyruscyliu/virtfuzz-qemu.git virtfuzz-qemu-videzzo    --depth=1
 
@@ -73,15 +73,15 @@ cd evaluation
 + Step 1: run fuzzers (for nyx, please check its README)
 
 ```
-./launch-fuzzer.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none [[RUNS] [TIMEOUT]]
+./launch-fuzzer.sh videzzo|videzzo++|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none [[RUNS] [TIMEOUT]]
 ./launch-fuzzer.sh vshuttle qemu ohci none [[RUNS] [TIMEOUT]]
 ```
 
 + Step 2: calculate coverage and performance
 
 ```
-./calculate-coverage.sh    videzzo|qemufuzzer|vshuttle|nyx qemu|vbox uhci|ohci|ehci|xhci|qemu_xhci arp|ar|rp|ap|a|r|p|none
-./calculate-performance.sh videzzo|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none
+./calculate-coverage.sh    videzzo|videzzo++|qemufuzzer|vshuttle|nyx qemu|vbox uhci|ohci|ehci|xhci|qemu_xhci arp|ar|rp|ap|a|r|p|none
+./calculate-performance.sh videzzo|videzzo++|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none
 ```
 
 ### Calculate annotation stats

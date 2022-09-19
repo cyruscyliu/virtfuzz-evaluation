@@ -3,6 +3,7 @@ docker run --rm \
     -v $PWD/evaluation:/root/evaluation \
     -v $PWD/virtfuzz-llvm-project:/root/llvm-project \
     -v $PWD/virtfuzz-qemu-videzzo:/root/qemu-videzzo \
+    -v $PWD/virtfuzz-qemu-videzzo++:/root/qemu-videzzo++ \
     -v $PWD/virtfuzz-qemu-qemufuzzer:/root/qemu-qemufuzzer \
     -v $PWD/virtfuzz-qemu-vshuttle:/root/qemu-vshuttle\
     -v $PWD/virtfuzz-vbox:/root/vbox \
