@@ -6,3 +6,6 @@ crash-*
 *-in
 *-out
 *-seed
+*hci-in-*
+*hci-out-*
+*hci-seed-*
