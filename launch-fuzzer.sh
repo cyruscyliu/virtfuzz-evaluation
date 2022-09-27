@@ -109,7 +109,7 @@ for ROUND in $(seq ${START} ${RUNS}); do
         make install
         popd && popd
         LLVM_PROFILE_FILE=profile-$SIG-$ROUND \
-        timeout -s KILL $TIMEOUT cpulimit -l 100 -- bash -x $BIN $TARGET $ROUND               >$SIG-$ROUND.log 2>&1
+        timeout -s KILL $TIMEOUT cpulimit -l 100 -- bash -x $BIN $TARGET $ROUND               >/dev/null 2>&1 &
     else
         echo ${usage}
         exit 1

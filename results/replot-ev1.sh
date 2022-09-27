@@ -3,7 +3,7 @@ python3 ../cov24plot.py videzzo-qemu-ac97-arp.csv qtest-qemu-ac97-none.csv nyx-q
 python3 ../cov24plot.py videzzo-qemu-cs4231a-arp.csv qtest-qemu-cs4231a-none.csv VQ
 python3 ../cov24plot.py videzzo-qemu-es1370-arp.csv qtest-qemu-es1370-none.csv VQ
 python3 ../cov24plot.py videzzo-qemu-intelhda-arp.csv qtest-qemu-intelhda-none.csv nyx-qemu-legacy_intelhda-none.csv VQN
-python3 ../cov24plot.py videzzo-qemu-sb16-arp.csv qtest-qemu-sb16-none.csv VQ
+python3 ../cov24plot.py videzzo-qemu-sb16-arp.csv qtest-qemu-sb16-none.csv nyx-qemu-legacy_sb16-none.csv VQN
 
 python3 ../cov24plot.py videzzo-qemu-ahci-arp.csv qtest-qemu-ahci-none.csv VQ
 python3 ../cov24plot.py videzzo-qemu-floppy-arp.csv qtest-qemu-floppy-none.csv VQ
