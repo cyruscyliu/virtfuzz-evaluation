@@ -1,5 +1,6 @@
 *reports
 profile-*
+sprofile-*
 crash-*
 *.tar.gz
 *.log
