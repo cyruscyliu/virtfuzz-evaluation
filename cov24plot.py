@@ -24,6 +24,10 @@ def plot(metadata, linestyle, marker, color, shadowcolor, ignore_variant=True):
         label += ' (e1000e)'
     elif metadata['target'] == 'e1000e_core':
         label += ' (e1000e_core)'
+    if metadata['target']  ==  'legacy_xhci':
+        label += ' (Legacy)'
+    elif  metadata['target']  == 'qemu_xhci':
+        label += ' (Spec)'
 
     plt.plot(data['timestamp'], data['avg'],
              linestyle, linewidth=1,
@@ -54,7 +58,7 @@ ax.set_aspect(4.9, adjustable='box')
 videzzo_markers = ['o', 'v', '1', '8']
 qemufuzzer_markers = ['p']
 vshuttle_markers = ['s']
-nyx_markder = ['x']
+nyx_markder = ['x', '|']
 
 indicators = sys.argv[-1]
 shadowcolor = []
@@ -85,8 +89,10 @@ for idx, indicator in enumerate(indicators):
         # colors.append('#E88472')
         colors.append('#0f0f0f')
         shadowcolor.append('#E88472')
-        # markers.append(nyx_markder[idx % len(nyx_markder)])
-        markers.append(None)
+        if ':' in linestyles:
+            markers.append(nyx_markder[idx % len(nyx_markder)])
+        else:
+            markers.append(None)
         linestyles.append(':')
     elif indicator == 'S':
         # colors.append('#EEB479')
