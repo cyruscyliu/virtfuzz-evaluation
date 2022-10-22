@@ -6,5 +6,8 @@ python3 ../cov24plot.py \
 python3 ../cov24plot.py \
     videzzo-qemu-xhci-arp.csv videzzo-qemu-xhci-ap.csv  videzzo-qemu-xhci-rp.csv  videzzo-qemu-xhci-p.csv \
     qtest-qemu-xhci-none.csv \
-    nyx-qemu-legacy_xhci-none.csv nyx-qemu-qemu_xhci-none.csv \
+    nyx-qemu-legacy_xhci-none.csv \
     VVVVQNN
+python3 ../cov24plot.py \
+    videzzo-qemu-xhci-arp.csv nyx-qemu-qemu_xhci-none.csv \
+    VN
