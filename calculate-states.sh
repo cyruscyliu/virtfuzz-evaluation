@@ -19,6 +19,7 @@ DATA_DIR=$SIG-states
 mkdir $DATA_DIR
 mv sprofile-$SIG-* $DATA_DIR
 OUTPUT_DIR=$DATA_DIR.output
+rm -rf $OUTPUT_DIR
 mkdir $OUTPUT_DIR
 
 # step 2: output dot file
