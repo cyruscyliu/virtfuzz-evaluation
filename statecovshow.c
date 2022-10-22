@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv) {
     if (argc != 3) {
-        printf("usage: %s sprofile-xxx time\n", argv[0]);
+        printf("usage: %s sprofile-xxx label\n", argv[0]);
         exit(1);
     }
 
@@ -24,12 +24,8 @@ int main(int argc, char **argv) {
     StateMachine *TableAccumulated = (StateMachine *)Data;
     int i = 0, j;
     uint8_t v;
-    // for (j = 0; j < NodeSize; j++) {
-    //     v = GetNodeValue(TableAccumulated, i, j);
-    //     printf("%d: %d\n", j, v);
-    // }
     printf("digraph {\n");
-    printf("label=\"%s\"", argv[2]);
+    printf("label=\"%s\"\n", argv[2]);
     printf("labelloc=top\n");
     printf("abeljust=rifht\n");
     printf("fontsize=50\n");
