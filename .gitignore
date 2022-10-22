@@ -11,3 +11,4 @@ crash-*
 *hci-out-*
 *hci-seed-*
 statecovshow
+statecovcount

@@ -55,5 +55,5 @@ for i in $(seq 0 9); do
     cat ${tmp01} | python3 rebase-timestamp.py >> ${tmp11}
 done
 
-cat ${tmp11} | python3 covtablegen2.py > ${SIG}.states
+cat ${tmp10} | python3 covtablegen2.py > ${SIG}.states
 cat ${tmp11} | python3 covtablegen2.py > ${SIG}.transitions
