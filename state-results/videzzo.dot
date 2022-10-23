@@ -1,5 +1,6 @@
 digraph {
-label="ViDeZZo (24 hours)"labelloc=top
+label="ViDeZZo (24 hours)"
+labelloc=top
 abeljust=rifht
 fontsize=50
     layout="neato"
