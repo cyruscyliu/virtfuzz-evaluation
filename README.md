@@ -84,6 +84,13 @@ cd evaluation
 ./calculate-performance.sh videzzo|videzzo++|qemufuzzer qemu|vbox uhci|ohci|ehci|xhci arp|ar|rp|ap|a|r|p|none
 ```
 
++ Step 3: calcluate state and state transition coverage
+
+```
+./calculate-states.sh videzzo|videzzo++|nyx qemu xhci|qemu_xhci arp|none
+./calculate-transitions.sh videzzo|videzzo++|nyx qemu xhci|qemu_xhci arp|none
+```
+
 ### Calculate annotation stats
 
 ## Benchmark bugs over time
