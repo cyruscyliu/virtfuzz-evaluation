@@ -22,7 +22,7 @@ python3 ../cov24plot.py videzzo-qemu-ati-arp.csv V
 python3 ../cov24plot.py videzzo-qemu-ati2d-arp.csv V
 python3 ../cov24plot.py videzzo-qemu-cirrusvga-arp.csv qtest-qemu-cirrusvga-none.csv VQ
 
-#  python3 ../cov24plot.py videzzo-qemu-ehci-arp.csv qtest-qemu-ehci-none.csv vshuttle-qemu-ehci-none.csv VQS
-python3 ../cov24plot.py videzzo-qemu-ohci-arp.csv qtest-qemu-ohci-none.csv vshuttle-qemu-ohci-none.csv VQS
-#  python3 ../cov24plot.py videzzo-qemu-uhci-arp.csv qtest-qemu-uhci-none.csv vshuttle-qemu-uhci-none.csv VQS
-python3 ../cov24plot.py videzzo-qemu-xhci-arp.csv qtest-qemu-xhci-none.csv nyx-qemu-legacy_xhci-none.csv  VQN
+python3 ../cov24plot.py videzzo-qemu-ehci-arp.csv qtest-qemu-ehci-none.csv vshuttle-qemu-ehci-none.csv   VQS
+python3 ../cov24plot.py videzzo-qemu-ohci-arp.csv qtest-qemu-ohci-none.csv vshuttle-qemu-ohci-none.csv   VQS
+python3 ../cov24plot.py videzzo-qemu-uhci-arp.csv qtest-qemu-uhci-none.csv vshuttle-qemu-uhci-none.csv   VQS
+python3 ../cov24plot.py videzzo-qemu-xhci-arp.csv qtest-qemu-xhci-none.csv nyx-qemu-legacy_xhci-none.csv VQN
