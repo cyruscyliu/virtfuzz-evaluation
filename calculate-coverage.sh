@@ -21,13 +21,21 @@ if [ $FUZZER != 'nyx' ]; then
     mv profile-$SIG-* $PROFILE_DIR
 fi
 
+ARCH=i386
+
+if [ $TARGET == 'pl041' ]; then
+    ARCH=arm
+elif [ $TARGET == 'xlnx-dp' ]; then
+    ARCH=aarch64
+fi
+
 # step 2: generate coverage reports
 if [ $FUZZER == 'videzzo' ]; then
-    BIN=../qemu-videzzo/out-cov/qemu-videzzo-i386
+    BIN=../qemu-videzzo/out-cov/qemu-videzzo-$ARCH
 elif [ $FUZZER == 'videzzo++' ]; then
-    BIN=../qemu-videzzo/out-cov/qemu-videzzo-i386
+    BIN=../qemu-videzzo/out-cov/qemu-videzzo-$ARCH
 elif [ $FUZZER == 'qemufuzzer' ]; then
-    BIN=../qemu-qemufuzzer/out-cov/qemu-fuzz-i386
+    BIN=../qemu-qemufuzzer/out-cov/qemu-fuzz-$ARCH
 elif [ $FUZZER == 'nyx' ]; then
     BIN=../Nyx/Targets/qemu/VM/qemu-nyx/out-cov/qemu-system-x86_64
 elif [ $FUZZER == 'vshuttle' ]; then
@@ -45,6 +53,10 @@ elif [ $VMM == 'qemu' ] && [ $TARGET == 'xhci' ]; then
     FILENAME='hcd-xhci.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'uhci' ]; then
     FILENAME='hcd-uhci.c'
+elif [ $VMM == 'qemu' ] && [ $TARGET == 'pl041' ]; then
+    FILENAME='pl041.c'
+elif [ $VMM == 'qemu' ] && [ $TARGET == 'xlnx-dp' ]; then
+    FILENAME='xlnx_dp.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'qemu_xhci' ]; then
     FILENAME='hcd-xhci.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'legacy_ac97' ]; then
