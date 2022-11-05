@@ -25,7 +25,11 @@ ARCH=i386
 
 if [ $TARGET == 'pl041' ]; then
     ARCH=arm
+elif [ $TARGET == 'tc6393xb' ]; then
+    ARCH=arm
 elif [ $TARGET == 'xlnx-dp' ]; then
+    ARCH=aarch64
+elif [ $TARGET == 'xlnx-zynqmp-can' ]; then
     ARCH=aarch64
 fi
 
@@ -53,6 +57,10 @@ elif [ $VMM == 'qemu' ] && [ $TARGET == 'xhci' ]; then
     FILENAME='hcd-xhci.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'uhci' ]; then
     FILENAME='hcd-uhci.c'
+elif [ $VMM == 'qemu' ] && [ $TARGET == 'xlnx-zynqmp-can' ]; then
+    FILENAME='xlnx-zynqmp-can.c'
+elif [ $VMM == 'qemu' ] && [ $TARGET == 'tc6393xb' ]; then
+    FILENAME='tc6393xb.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'pl041' ]; then
     FILENAME='pl041.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'xlnx-dp' ]; then
