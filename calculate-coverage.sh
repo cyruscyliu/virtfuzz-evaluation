@@ -45,6 +45,10 @@ elif [ $VMM == 'qemu' ] && [ $TARGET == 'xhci' ]; then
     FILENAME='hcd-xhci.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'uhci' ]; then
     FILENAME='hcd-uhci.c'
+elif [ $VMM == 'qemu' ] && [ $TARGET == 'xlnx-zynqmp-can' ]; then
+    FILENAME='xlnx-zynqmp-can.c'
+elif [ $VMM == 'qemu' ] && [ $TARGET == 'xlnx-dp' ]; then
+    FILENAME='xlnx_dp.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'qemu_xhci' ]; then
     FILENAME='hcd-xhci.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'legacy_ac97' ]; then
