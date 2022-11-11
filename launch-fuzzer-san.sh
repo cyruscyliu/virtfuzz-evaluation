@@ -72,9 +72,9 @@ export UBSAN_OPTIONS=symbolize=1:halt_on_error=0:print_stacktrace=1
 for ROUND in $(seq 0 ${RUNS}); do
     if [ ${FUZZER} == 'videzzo' ]; then
         ${FLAGS}; \
-        cpulimit -l 100 -- $BIN --fuzz-target=videzzo-fuzz-$TARGET -max_total_time=${TIMEOUT} >$SIG-$ROUND.log 2>&1
+        cpulimit -l 100 -- $BIN --fuzz-target=videzzo-fuzz-$TARGET -max_total_time=${TIMEOUT} -detect_leaks=0 >$SIG-$ROUND.log 2>&1
     elif [ ${FUZZER} == 'qemufuzzer' ]; then
-        cpulimit -l 100 -- $BIN --fuzz-target=generic-fuzz-$TARGET -max_total_time=${TIMEOUT} >$SIG-$ROUND.log 2>&1
+        cpulimit -l 100 -- $BIN --fuzz-target=generic-fuzz-$TARGET -max_total_time=${TIMEOUT} -detect_leaks=0 >$SIG-$ROUND.log 2>&1
     else
         echo ${usage}
         exit 1
