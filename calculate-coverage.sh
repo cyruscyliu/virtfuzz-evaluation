@@ -21,7 +21,7 @@ if [ $FUZZER != 'nyx' ]; then
     mv profile-$SIG-* $PROFILE_DIR
 fi
 
-ARCH=i386
+ARCH=x86_64
 
 if [ $TARGET == 'pl041' ]; then
     ARCH=arm
@@ -97,6 +97,8 @@ elif [ $VMM == 'qemu' ] && [ $TARGET == 'legacy_rtl8139' ]; then
     FILENAME='rtl8139.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'legacy_xhci' ]; then
     FILENAME='hcd-xhci.c'
+elif [ $VMM == 'qemu' ] && [ $TARGET == 'virtio-blk' ]; then
+    FILENAME='block/virtio-blk.c'
 elif [ $VMM == 'vbox' ] && [ $TARGET == 'sb16' ]; then
     FILENAME='DevSB16.cpp'
 elif [ $VMM == 'vbox' ] && [ $TARGET == 'ohci' ]; then
