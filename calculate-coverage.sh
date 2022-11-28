@@ -35,7 +35,11 @@ fi
 
 # step 2: generate coverage reports
 if [ $FUZZER == 'videzzo' ]; then
-    BIN=../qemu-videzzo/out-cov/qemu-videzzo-$ARCH
+    if [ $VMM == 'qemu' ]; then
+        BIN=../qemu-videzzo/out-cov/qemu-videzzo-$ARCH
+    elif [ $VMM == 'vbox' ]; then
+        BIN=/root/videzzo/videzzo_vbox/vbox/out-cov/linux.amd64/debug/bin/VBoxDD.so
+    fi
 elif [ $FUZZER == 'videzzo++' ]; then
     BIN=../qemu-videzzo/out-cov/qemu-videzzo-$ARCH
 elif [ $FUZZER == 'qemufuzzer' ]; then
@@ -93,6 +97,14 @@ elif [ $VMM == 'qemu' ] && [ $TARGET == 'legacy_rtl8139' ]; then
     FILENAME='rtl8139.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'legacy_xhci' ]; then
     FILENAME='hcd-xhci.c'
+elif [ $VMM == 'vbox' ] && [ $TARGET == 'sb16' ]; then
+    FILENAME='DevSB16.cpp'
+elif [ $VMM == 'vbox' ] && [ $TARGET == 'ohci' ]; then
+    FILENAME='DevOHCI.cpp'
+elif [ $VMM == 'vbox' ] && [ $TARGET == 'pcnet' ]; then
+    FILENAME='DevPCNet.cpp'
+elif [ $VMM == 'vbox' ] && [ $TARGET == 'floppy' ]; then
+    FILENAME='DevFdc.cpp'
 else
     echo ${usage}
     exit 1

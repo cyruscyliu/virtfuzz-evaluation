@@ -34,7 +34,7 @@ if [ ${FUZZER} == 'videzzo' ]; then
     if [ ${VMM} == 'qemu' ]; then
         BIN=$PWD/../qemu-videzzo/out-cov/qemu-videzzo-i386
     elif [ ${VMM} == 'vbox' ]; then
-        BIN=$PWD/../vbox/out-cov/VBoxViDeZZo
+        BIN=/root/videzzo/videzzo_vbox/vbox/out-cov/linux.amd64/debug/bin/VBoxViDeZZo
     else
         echo ${usage}
         exit 1
