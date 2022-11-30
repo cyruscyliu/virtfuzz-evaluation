@@ -21,7 +21,7 @@ if [ $FUZZER != 'nyx' ]; then
     mv profile-$SIG-* $PROFILE_DIR
 fi
 
-ARCH=x86_64
+ARCH=i386
 
 if [ $TARGET == 'pl041' ]; then
     ARCH=arm
