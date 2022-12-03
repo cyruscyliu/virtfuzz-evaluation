@@ -21,7 +21,7 @@ if [ $FUZZER != 'nyx' ]; then
     mv profile-$SIG-* $PROFILE_DIR
 fi
 
-ARCH=x86_64
+ARCH=i386
 
 if [ $TARGET == 'pl041' ]; then
     ARCH=arm
@@ -71,6 +71,8 @@ elif [ $VMM == 'qemu' ] && [ $TARGET == 'xlnx-dp' ]; then
     FILENAME='xlnx_dp.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'qemu_xhci' ]; then
     FILENAME='hcd-xhci.c'
+elif [ $VMM == 'qemu' ] && [ $TARGET == 'ahci-hd' ]; then
+    FILENAME='ahci.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'legacy_ac97' ]; then
     FILENAME='ac97.c'
 elif [ $VMM == 'qemu' ] && [ $TARGET == 'legacy_cs4231a' ]; then

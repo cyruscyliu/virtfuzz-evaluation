@@ -1,0 +1,11 @@
+[+] handling qemufuzzer-qemu-virtio-blk-none-logs/qemufuzzer-qemu-virtio-blk-none-0.log
+[+] handling qemufuzzer-qemu-virtio-blk-none-logs/qemufuzzer-qemu-virtio-blk-none-1.log
+[+] handling qemufuzzer-qemu-virtio-blk-none-logs/qemufuzzer-qemu-virtio-blk-none-2.log
+[+] handling qemufuzzer-qemu-virtio-blk-none-logs/qemufuzzer-qemu-virtio-blk-none-3.log
+[+] handling qemufuzzer-qemu-virtio-blk-none-logs/qemufuzzer-qemu-virtio-blk-none-4.log
+[+] handling qemufuzzer-qemu-virtio-blk-none-logs/qemufuzzer-qemu-virtio-blk-none-5.log
+[+] handling qemufuzzer-qemu-virtio-blk-none-logs/qemufuzzer-qemu-virtio-blk-none-6.log
+[+] handling qemufuzzer-qemu-virtio-blk-none-logs/qemufuzzer-qemu-virtio-blk-none-7.log
+[+] handling qemufuzzer-qemu-virtio-blk-none-logs/qemufuzzer-qemu-virtio-blk-none-8.log
+[+] handling qemufuzzer-qemu-virtio-blk-none-logs/qemufuzzer-qemu-virtio-blk-none-9.log
+[+] median: 130.0, average: 158.20935154949325, std: 84.20646678840592
