@@ -30,9 +30,8 @@ def plot(metadata, linestyle, marker, color, shadowcolor, ignore_variant=True):
         label += ' (Spec)'
 
     plt.plot(data['timestamp'], data['avg'],
-             linestyle, linewidth=0.5,
-             color=color, label=label,
-             marker=marker, markersize=0.5)
+             linestyle, linewidth=0.5, color=color, label=label,
+             marker=marker, markersize=5, markevery=30)
     plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.6)
     plt.legend(loc='upper left', fontsize=12, ncol=1)
 

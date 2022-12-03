@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 plt.rcParams.update({'font.size': 24})
 
-def plot(metadata, linestyle, marker, color, shadowcolor, ignore_variant=True):
+def plot(metadata, linestyle, marker, dashes, color, shadowcolor, ignore_variant=True):
     filename = metadata['filename']
     data = pd.read_csv(filename)
     data['timestamp'] -= data['timestamp'][0]
@@ -30,9 +30,8 @@ def plot(metadata, linestyle, marker, color, shadowcolor, ignore_variant=True):
         label += ' (Spec)'
 
     plt.plot(data['timestamp'], data['avg'],
-             linestyle, linewidth=1,
-             color=color, label=label,
-             marker=marker, markersize=3)
+             linestyle, linewidth=1, color=color, label=label,
+             marker=marker, markersize=3, dashes=dashes)
     plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.6)
     plt.legend(loc='lower right', fontsize=12, ncol=1)
 
@@ -65,6 +64,7 @@ shadowcolor = []
 markers = []
 colors = []
 linestyles = []
+dashes = []
 
 ignore_variant = True
 for idx, indicator in enumerate(indicators):
@@ -78,6 +78,7 @@ for idx, indicator in enumerate(indicators):
         else:
             markers.append(None)
         linestyles.append('-')
+        dashes.append((2, 0))
     elif indicator == 'Q':
         # colors.append('#E9E29C')
         colors.append('#0f0f0f')
@@ -85,6 +86,7 @@ for idx, indicator in enumerate(indicators):
         # markers.append(qemufuzzer_markers[idx % len(qemufuzzer_markers)])
         markers.append(None)
         linestyles.append('--')
+        dashes.append((2, 1))
     elif indicator == 'N':
         # colors.append('#E88472')
         colors.append('#0f0f0f')
@@ -94,6 +96,7 @@ for idx, indicator in enumerate(indicators):
         else:
             markers.append(None)
         linestyles.append(':')
+        dashes.append((2, 4))
     elif indicator == 'S':
         # colors.append('#EEB479')
         colors.append('#0f0f0f')
@@ -101,10 +104,11 @@ for idx, indicator in enumerate(indicators):
         # markers.append(vshuttle_markers[idx % len(vshuttle_markers)])
         markers.append(None)
         linestyles.append('-.')
+        dashes.append((2, 10))
 if len(shadowcolor) == 0:
     raise "unknow colorset {}".format(colorset)
 for i, md in enumerate(metadata):
-    plot(md, linestyles[i], markers[i], colors[i], shadowcolor[i], ignore_variant=ignore_variant)
+    plot(md, linestyles[i], markers[i], dashes[i], colors[i], shadowcolor[i], ignore_variant=ignore_variant)
 
 plt.xticks([10, 60, 600, 3600, 86400], ['10s', '1m', '10m', '1h', '24h'])
 plt.axvline(x=10, color='purple', linestyle='dotted')
