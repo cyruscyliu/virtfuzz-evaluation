@@ -48,7 +48,7 @@ for filename in sys.argv[1:-1]:
 
 fig, ax = plt.subplots()
 ax.set_xscale('log')
-ax.set_ylabel('State and Transition Count')
+ax.set_ylabel('Count')
 # ax.set_ylim(0, 1)
 ax.set_xlim(0.9, 86400)
 # ax.yaxis.set_major_formatter(mtick.PercentFormatter(1))
