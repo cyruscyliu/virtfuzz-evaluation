@@ -4,7 +4,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
-plt.rcParams.update({'font.size': 24})
+plt.rcParams.update({'font.size': 12})
+plt.rcParams.update({'figure.figsize': (3.2, 2.4)})
 
 def plot(metadata, linestyle, marker, dashes, color, shadowcolor, ignore_variant=True):
     filename = metadata['filename']
@@ -31,9 +32,16 @@ def plot(metadata, linestyle, marker, dashes, color, shadowcolor, ignore_variant
 
     plt.plot(data['timestamp'], data['avg'],
              linestyle, linewidth=0.5, color=color, label=label,
-             marker=marker, markersize=5, markevery=20, dashes=dashes)
-    plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.6)
-    plt.legend(loc='lower right', fontsize=12, ncol=1)
+             marker=marker, markersize=1.5, markevery=40, dashes=dashes)
+    l = len(data['timestamp'])
+    idx = [i for i in range(0, 20)]
+    idx.extend([i for i in range(10, l, 40)])
+    t = [data['timestamp'][i] for i in idx]
+    mi = [data['min'][i] for i in idx]
+    ma = [data['max'][i] for i in idx]
+    plt.fill_between(t, mi, ma, color=shadowcolor, alpha=0.6)
+    # plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.6)
+    plt.legend(loc='lower right', fontsize=6, ncol=1)
 
 # name convention
 # videzzo-qemu-ehci-arp.csv

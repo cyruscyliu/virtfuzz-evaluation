@@ -4,7 +4,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
-plt.rcParams.update({'font.size': 24})
+plt.rcParams.update({'font.size': 12})
+plt.rcParams.update({'figure.figsize': (3.2, 2.4)})
 
 def plot(metadata, linestyle, marker, dashes, color, shadowcolor, ignore_variant=True):
     filename = metadata['filename']
@@ -29,11 +30,22 @@ def plot(metadata, linestyle, marker, dashes, color, shadowcolor, ignore_variant
     elif  metadata['target']  == 'qemu_xhci':
         label += ' (Spec)'
 
+    if label == 'Nyx (Spec)':
+        markevery = 100
+    else:
+        markevery = 40
     plt.plot(data['timestamp'], data['avg'],
-             linestyle, linewidth=1, color=color, label=label,
-             marker=marker, markersize=3, dashes=dashes)
-    plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.6)
-    plt.legend(loc='lower right', fontsize=12, ncol=1)
+             linestyle, linewidth=0.5, color=color, label=label,
+             marker=marker, markersize=1.5, markevery=markevery, dashes=dashes)
+    l = len(data['timestamp'])
+    idx = [i for i in range(0, 20)]
+    idx.extend([i for i in range(10, l, 40)])
+    t = [data['timestamp'][i] for i in idx]
+    mi = [data['min'][i] for i in idx]
+    ma = [data['max'][i] for i in idx]
+    plt.fill_between(t, mi, ma, color=shadowcolor, alpha=0.6)
+    # plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.6)
+    plt.legend(loc='lower right', fontsize=6, ncol=1)
 
 # name convention
 # videzzo-qemu-ehci-arp.csv
@@ -114,4 +126,4 @@ plt.xticks([10, 60, 600, 3600, 86400], ['10s', '1m', '10m', '1h', '24h'])
 plt.axvline(x=10, color='purple', linestyle='dotted')
 plt.axvline(x=3600, color='purple', linestyle='dotted')
 plt.axvline(x=43200, color='purple', linestyle='dotted')
-plt.savefig('{}.pdf'.format('@'.join(sys.argv[1:-1])), bbox_inches='tight')
+plt.savefig('{}.pdf'.format('@'.join(sys.argv[1:-1])), bbox_inches='tight', dpi=300)

@@ -32,7 +32,14 @@ def plot(metadata, linestyle, marker, color, shadowcolor, ignore_variant=True):
     plt.plot(data['timestamp'], data['avg'],
              linestyle, linewidth=0.5, color=color, label=label,
              marker=marker, markersize=5, markevery=30)
-    plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.6)
+    l = len(data['timestamp'])
+    idx = [i for i in range(0, 10)]
+    idx.extend([i for i in range(10, l, 20)])
+    t = [data['timestamp'][i] for i in idx]
+    mi = [data['min'][i] for i in idx]
+    ma = [data['max'][i] for i in idx]
+    plt.fill_between(t, mi, ma, color=shadowcolor, alpha=0.6)
+    # plt.fill_between(data['timestamp'], data['min'], data['max'], color=shadowcolor, alpha=0.6)
     plt.legend(loc='upper left', fontsize=12, ncol=1)
 
 # name convention
